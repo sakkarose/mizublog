@@ -90,7 +90,7 @@ weight = 4
     name = "linkedin"
     link = "https://www.linkedin.com/in/dau-trong-hoang/"
   [[params.social]]
-    name = "at"
+    name = "envelope"
     link = "ame@mizu.reisen"  # no need for "mailto:" in the head
   [[params.social]]
     name = "discord"
