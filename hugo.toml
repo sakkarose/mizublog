@@ -81,8 +81,7 @@ weight = 4
       #serverUrl = "" # Defaults to https://matrix.cactus.chat:8448 (Cactus Chat public server)
       #serverName = "" # Defaults to cactus.chat
 
-  # the value of name should be an valid font awesome icon name (brands type)
-  # https://fontawesome.com/icons?d=gallery&s=brands
+  # name value equals what's on https://fontawesome.com/icons?d=gallery&s=brands
   [[params.social]]
     name = "github"
     link = "https://github.com/sakkarose"
