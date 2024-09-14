@@ -7,7 +7,7 @@ disqusShortname = "home"
 # googleAnalytics = "UA-1234-5"
 
 
-# summaryLength = 2
+summaryLength = 2
 
 # Main menu which appears below site header.
 [[menu.main]]
