@@ -1,6 +1,6 @@
 baseURL = "https://mizu.reisen"
 languageCode = "en-us"
-title = "Cactus theme example"
+title = "[mizu] ## home"
 theme = "cactus"
 copyright = "You" # cactus will use title if copyright is not set
 disqusShortname = "example" # Used when comments is enabled. Cactus will use site title if not set
@@ -51,12 +51,12 @@ weight = 4
   # \themes\cactus\assets\scss\colors
   colortheme = "latte"
   
+  # Home page settings
+  description = ""
+  
   rss = true # generate rss feed. default value is false
   googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
   showAllPostsArchive = false # default
-
-  # Home page settings
-  description = "Hugo is a general-purpose website framework. Technically speaking, Hugo is a static site generator. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your website’s end users and an ideal writing experience for website authors."
   mainSection = "posts" # your main section
   showAllPostsOnHomePage = false # default
   postsOnHomePage = 5 # this option will be ignored if showAllPostsOnHomePage is set to true
