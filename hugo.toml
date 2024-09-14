@@ -2,8 +2,8 @@ baseURL = "https://mizu.reisen"
 languageCode = "en-us"
 title = "home ## [mizu.reisen]"
 theme = "cactus"
-copyright = "You" # cactus will use title if copyright is not set
-disqusShortname = "example" # Used when comments is enabled. Cactus will use site title if not set
+copyright = "mizu"
+disqusShortname = "home"
 # googleAnalytics = "UA-1234-5"
 
 
@@ -51,11 +51,10 @@ weight = 4
   # \themes\cactus\assets\scss\colors
   colortheme = "latte"
   
-  # Home page settings
   description = """
   Hi. These things - unplanned self-hosted projects, oddly specific scripts, even this random personal blog - are all inspired by the weekly monotony I encounter at my corporate job.\n
-  About me, I'm Hoang, or mizu if you're not HR.\n
-  Currently I'm getting good by working mainly in cybersecurity. Partly I
+  About me: I'm Hoang, but feel free to call me mizu if you're not HR.\n
+  Currently and primarily I'm trying to get good in the cybersecurity field. I also work part-time as a technical consultant, and occasionally contributing to the initial phases of organizational compliance projects.
   """
   
   rss = true # generate rss feed. default value is false
