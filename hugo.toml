@@ -48,7 +48,9 @@ weight = 4
 
 [params]
 
-  colortheme = "classic" # dark, light, white, or classic
+  # \themes\cactus\assets\scss\colors
+  colortheme = "latte"
+  
   rss = true # generate rss feed. default value is false
   googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
   showAllPostsArchive = false # default
