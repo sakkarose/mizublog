@@ -1,6 +1,6 @@
 baseURL = "https://mizu.reisen"
 languageCode = "en-us"
-title = "[mizu] ## home"
+title = "home ## [mizu.reisen]"
 theme = "cactus"
 copyright = "You" # cactus will use title if copyright is not set
 disqusShortname = "example" # Used when comments is enabled. Cactus will use site title if not set
