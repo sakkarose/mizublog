@@ -75,7 +75,7 @@ weight = 4
   showReadTime = true # default
 
   [params.comments]
-    enabled = true # default
+    enabled = false # default
     engine = "cactus_comments" # only disqus, utterances, and cactus_comments is supported
     [params.comments.utterances]
       repo = "<github_username>/<github_reponame>"
@@ -85,7 +85,7 @@ weight = 4
       siteName = "your_cactus_comments_sitename" # see https://cactus.chat/ on how to register your site name
       #serverUrl = "" # Defaults to https://matrix.cactus.chat:8448 (Cactus Chat public server)
       #serverName = "" # Defaults to cactus.chat
-
+	  
   # name value equals what's on https://fontawesome.com/icons?d=gallery&s=brands
   [[params.social]]
     name = "github"
