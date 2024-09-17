@@ -99,5 +99,3 @@ weight = 4
   [[params.social]]
     name = "discord"
     link = "https://discordapp.com/users/355703385133154304"
-
-{{ partial "lastfm.html" . }} 
