@@ -98,3 +98,7 @@ weight = 4
   [[params.social]]
     name = "discord"
     link = "https://discordapp.com/users/355703385133154304"
+    
+[security]
+  [security.funcs]
+    getenv = ['^HUGO_', '^CI$', '^LASTFM_API_KEY', '^LASTFM_USERNAME']
