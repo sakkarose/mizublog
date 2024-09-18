@@ -60,6 +60,12 @@ body {
       background-image: linear-gradient(transparent, transparent 4px, $color-link 4px, $color-link);
     }
   }
+  
+  .track-info a {
+    color: inherit;
+    text-decoration: none;
+    background: none;
+  
   a.icon {
     background: none;
 
