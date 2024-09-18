@@ -35,6 +35,8 @@
       </p>
   {{ end }}
   {{ partial "optional-about.html" . }}
+  {{ $apiKey := getenv "LASTFM_API_KEY" }}
+  {{ $username := getenv "LASTFM_USERNAME" }}
   {{ partial "lastfm.html" . }}
   </section>
 
