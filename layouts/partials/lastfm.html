@@ -6,6 +6,20 @@
 {{ $lastfmapiKey := getenv "LASTFM_API_KEY" }}
 {{ $lastfmusername := getenv "LASTFM_USERNAME" }}
 
+<head>
+  <style>
+    /* Target all <a> tags within .track-info on the index page */
+    body.home #lastfm-recent-track .track-info a {
+      text-decoration: none; /* Remove underline */
+    }
+
+    /* Or, if you want to target the .track-info class itself */
+    body.home #lastfm-recent-track .track-info {
+      text-decoration: none; /* Remove underline from all links within .track-info */
+    }
+  </style>
+</head>
+
 <div id="lastfm-recent-track">
     <p>Pulling Last.fm API ...</p>
 </div>
