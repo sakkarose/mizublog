@@ -67,13 +67,17 @@
 </style>
 
 <script>
-    // Replace with your actual Last.fm API key and username
-	const apiKey = LASTFM_API_KEY; 
-	const username = LASTFM_USERNAME; 
+addEventListener('fetch', event => {
+    event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+    // Decrypt environment variables (replace with actual Cloudflare decryption logic)
+    const apiKey = await decryptEnvironmentVariable(LASTFM_API_KEY);
+    const username = await decryptEnvironmentVariable(LASTFM_USERNAME);
 
     // Construct the Last.fm API URL
-    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;  
-
+    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;
 
     // Fetch recent tracks from Last.fm API
     fetch(apiUrl)
@@ -85,7 +89,7 @@
             const songName = track.name;
             const albumName = track.album['#text'];
             const artworkUrl = track.image[3]['#text'];
-			const nowPlaying = track['@attr'] && track['@attr']['nowplaying']; 
+            const nowPlaying = track['@attr'] && track['@attr']['nowplaying'];
 
             // Format the track information
             const formattedTrack = `${artist} - ${songName}`;
@@ -97,10 +101,10 @@
             const artworkElement = document.createElement('img');
             artworkElement.src = artworkUrl;
             artworkElement.alt = `Album artwork for ${albumName}`;
-			
-			const nowPlayingElement = document.createElement('p');
-			nowPlayingElement.classList.add('now-playing');
-			nowPlayingElement.textContent = nowPlaying ? "Now playing" : "Most recent track";
+
+            const nowPlayingElement = document.createElement('p');
+            nowPlayingElement.classList.add('now-playing');
+            nowPlayingElement.textContent = nowPlaying ? "Now playing" : "Most recent track";
 
             const trackContainer = document.getElementById('lastfm-recent-track');
             trackContainer.innerHTML = `
@@ -117,4 +121,5 @@
             console.error('Error fetching recent tracks:', error);
             document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
         });
+}
 </script>
