@@ -25,7 +25,7 @@
             const artist = track.artist['#text'];
             const songName = track.name;
             const albumName = track.album['#text'];
-            const artworkUrl = track.image[1]['#text']; // Get a medium-sized image
+            const artworkUrl = track.image[3]['#text']; // Get a medium-sized image
 
             // Format the track information
             const formattedTrack = `${artist} - ${songName}`;
