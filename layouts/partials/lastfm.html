@@ -1,41 +1,19 @@
-<script>
-document.addEventListener('DOMContentLoaded', (event) => {
-  const response = fetch("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=" + env.LASTFM_USERNAME + "&api_key=" + env.LASTFM_API_KEY + "&limit=1&format=json");
+{{ $lastfm_user := "thweenty7" }} {{/* Replace with your Last.fm username */}}
+{{ $lastfm_api_key := "77b62fb7f97cba21d533b1eb39ec6ee5" }} {{/* Replace with your Last.fm API key */}}
 
-  response
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      let output = "";
+{{ $url := printf "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=%s&api_key=%s&format=json&limit=1" $lastfm_user $lastfm_api_key }}
 
-      // Check if data.recenttracks and data.recenttracks.track exist and are arrays
-      if (data.recenttracks && Array.isArray(data.recenttracks.track)) {
-        for (const track of data.recenttracks.track) {
-          // Check if track.name and track.artist['#text'] exist
-          if (track.name && track.artist && track.artist['#text']) {
-            output += `<li>${track.name} by ${track.artist['#text']}</li>`;
-          } else {
-            console.error("Missing track information in API response:", track);
-          }
-        }
-      } else {
-        output = "<li>No recent tracks found</li>";
-      }
+{{ with getJSON $url }}
+  {{ with .recenttracks.track }}
+    {{ $artist := index (index .artist 0) "#text" }}
+    {{ $track := index (index .name 0) "#text" }}
 
-      const outputElement = document.getElementById('lastfm-output');
-      if (outputElement) {
-        outputElement.innerHTML = output;
-      } else {
-        console.error("Element with ID 'lastfm-output' not found");
-      }
-    })
-    .catch(error => {
-      console.error('There was a problem fetching recent tracks:', error);
-      // You might also want to display an error message to the user here
-    });
-});
-</script>
+    <p>
+      {{ $artist }} - {{ $track }}
+    </p>
+  {{ else }}
+    <p>No recent tracks found.</p>
+  {{ end }}
+{{ else }}
+  <p>Error fetching data from Last.fm.</p>
+{{ end }}
