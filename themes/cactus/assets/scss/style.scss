@@ -62,9 +62,7 @@ body {
   }
   
   .track-title span a {
-    color: inherit;
-    text-decoration: none;
-    background: none;
+	@include underline(0, transparent);
   }
   
   a.icon {
