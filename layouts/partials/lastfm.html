@@ -3,6 +3,9 @@
    This Hugo partial fetches and displays your recent track from Last.fm
 */}}
 
+{{ $apiKey := getenv "LASTFM_API_KEY" }}
+{{ $username := getenv "LASTFM_USERNAME" }}
+
 <div id="lastfm-recent-track">
     <p>Pulling Last.fm API ...</p>
 </div>
