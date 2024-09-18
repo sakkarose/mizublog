@@ -1,38 +1,41 @@
 <script>
-// Your JavaScript code here
-const response = fetch("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=" + env.LASTFM_USERNAME + "&api_key=" + env.LASTFM_API_KEY + "&limit=1&format=json");
+document.addEventListener('DOMContentLoaded', (event) => {
+  const response = fetch("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=" + env.LASTFM_USERNAME + "&api_key=" + env.LASTFM_API_KEY + "&limit=1&format=json");
 
-// Check for environment variables
-console.log("LASTFM_USERNAME:", env.LASTFM_USERNAME);
-console.log("LASTFM_API_KEY:", env.LASTFM_API_KEY);
-
-response
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log("API Response Data:", data); // Log the API response data
-
-    let output = "";
-    if (data.recenttracks && data.recenttracks.track && data.recenttracks.track.length > 0) {
-      for (const track of data.recenttracks.track) {
-        output += `<li>${track.name} by ${track.artist['#text']}</li>`;
+  response
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
-    } else {
-      output = "<li>No recent tracks found</li>";
-    }
+      return response.json();
+    })
+    .then(data => {
+      let output = "";
 
-    const outputElement = document.getElementById('lastfm-output');
-    if (outputElement) {
-      outputElement.innerHTML = output;
-    } else {
-      console.error("Element with ID 'lastfm-output' not found");
-    }
-  })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-  });
+      // Check if data.recenttracks and data.recenttracks.track exist and are arrays
+      if (data.recenttracks && Array.isArray(data.recenttracks.track)) {
+        for (const track of data.recenttracks.track) {
+          // Check if track.name and track.artist['#text'] exist
+          if (track.name && track.artist && track.artist['#text']) {
+            output += `<li>${track.name} by ${track.artist['#text']}</li>`;
+          } else {
+            console.error("Missing track information in API response:", track);
+          }
+        }
+      } else {
+        output = "<li>No recent tracks found</li>";
+      }
+
+      const outputElement = document.getElementById('lastfm-output');
+      if (outputElement) {
+        outputElement.innerHTML = output;
+      } else {
+        console.error("Element with ID 'lastfm-output' not found");
+      }
+    })
+    .catch(error => {
+      console.error('There was a problem fetching recent tracks:', error);
+      // You might also want to display an error message to the user here
+    });
+});
 </script>
