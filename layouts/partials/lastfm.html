@@ -13,7 +13,8 @@
     const username = 'thweenty7';
 
     // Construct the Last.fm API URL
-    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;
+    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;  
+
 
     // Fetch recent tracks from Last.fm API
     fetch(apiUrl)
@@ -23,12 +24,25 @@
             const track = data.recenttracks.track[0];
             const artist = track.artist['#text'];
             const songName = track.name;
+            const albumName = track.album['#text'];
+            const artworkUrl = track.image[1]['#text']; // Get a medium-sized image
 
             // Format the track information
             const formattedTrack = `${artist} - ${songName}`;
 
-            // Update the HTML element with the formatted track
-            document.getElementById('lastfm-recent-track').innerHTML = `<p>${formattedTrack}</p>`;
+            // Create HTML elements for album and artwork
+            const albumElement = document.createElement('p');
+            albumElement.textContent = albumName;
+
+            const artworkElement = document.createElement('img');
+            artworkElement.src = artworkUrl;
+            artworkElement.alt = `Album artwork for ${albumName}`;
+
+            // Update the HTML element with the formatted track, album, and artwork
+            const trackContainer = document.getElementById('lastfm-recent-track');
+            trackContainer.innerHTML = `<p>${formattedTrack}</p>`;
+            trackContainer.appendChild(albumElement);
+            trackContainer.appendChild(artworkElement);
         })
         .catch(error => {
             console.error('Error fetching recent tracks:', error);
