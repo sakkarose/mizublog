@@ -1,11 +1,13 @@
+<script>
+// Your JavaScript code here
 const response = fetch("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=" + env.LASTFM_USERNAME + "&api_key=" + env.LASTFM_API_KEY + "&limit=1&format=json");
 const data = await response.json();
 
 let output = "";
-
-// Iterate directly over the 'track' array
 for (const track of data.recenttracks.track) {
-  output += `<li>${track.name} by ${track.artist['#text']}</li>`; 
+  output += `<li>${track.name} by ${track.artist['#text']}</li>`;
 }
 
-return output;
+// Assuming you want to display the output somewhere in your HTML
+document.getElementById('lastfm-output').innerHTML = output; 
+</script>
