@@ -88,12 +88,9 @@
             const songName = track.name;
             const albumName = track.album['#text'];
             const artworkUrl = track.image[3]['#text'];
-			const nowPlaying = track['@attr'] && track['@attr']['nowplaying']; 
+			const nowPlaying = track['@attr'] && track['@attr']['nowplaying'];
+			const songUrl = track.url
 
-            // Format the track information
-            const formattedTrack = `${artist} - ${songName}`;
-
-            // Create HTML elements for album and artwork
             const albumElement = document.createElement('p');
             albumElement.textContent = albumName;
 
@@ -109,7 +106,7 @@
             trackContainer.innerHTML = `
                 <img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
                 <div class="track-info">
-                    <h3>${songName}</h3>
+                    <h3><a href="${songUrl}" target="_blank">${songName}</a></h3>
                     <p>${artist}</p>
                     <p>${albumName}</p>
                     ${nowPlayingElement.outerHTML} 
