@@ -3,8 +3,8 @@
    This Hugo partial fetches and displays your recent track from Last.fm
 */}}
 
-{{ $apiKey := getenv "LASTFM_API_KEY" }}
-{{ $username := getenv "LASTFM_USERNAME" }}
+{{ $lastfmapiKey := getenv "LASTFM_API_KEY" }}
+{{ $lastfmusername := getenv "LASTFM_USERNAME" }}
 
 <div id="lastfm-recent-track">
     <p>Pulling Last.fm API ...</p>
@@ -71,8 +71,8 @@
 
 <script>
     // Replace with your actual Last.fm API key and username
-	const apiKey = LASTFM_API_KEY; 
-	const username = LASTFM_USERNAME;
+	const apiKey = "{{ $lastfmapiKey }}"; 
+	const username = "{{ $lastfmusername }}";
 
     // Construct the Last.fm API URL
     const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;  
