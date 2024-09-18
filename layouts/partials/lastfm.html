@@ -5,11 +5,12 @@
 
 {{ with getJSON $url }}
   {{ with .recenttracks.track }}
-    {{ $artist := index (index .artist 0) "#text" }}
-    {{ $track := index (index .name 0) "#text" }}
+    {{ $track := index . 0 }} {{/* Get the first track */}}
+    {{ $artist := $track.artist.#text }} {{/* Access artist name */}}
+    {{ $trackName := $track.name.#text }} {{/* Access track name */}}
 
     <p>
-      {{ $artist }} - {{ $track }}
+      {{ $artist }} - {{ $trackName }}
     </p>
   {{ else }}
     <p>No recent tracks found.</p>
