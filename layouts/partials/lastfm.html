@@ -15,6 +15,9 @@
    border-radius: 5px; /* Rounded corners */
    text-align: center; /* Center content */
    font-family: sans-serif;
+   display: flex; /* Use flexbox for better layout control */
+   align-items: center; /* Vertically center content */
+   justify-content: space-around; /* Distribute space evenly */
 }
 
 #lastfm-recent-track p {
@@ -26,7 +29,30 @@
    height: auto;
    border-radius: 3px; /* Slightly rounded image corners */
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+   width: 150px; /* Set a fixed width for the album art */
+   height: 150px; /* Maintain aspect ratio */
+   margin-right: 20px; /* Add space between image and text */
 }
+
+#lastfm-recent-track .track-info {
+    /* Style the text information */
+    text-align: left; 
+}
+
+#lastfm-recent-track .track-info h3 {
+    /* Style the track title */
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#lastfm-recent-track .track-info p {
+    /* Style the artist and album */
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    color: #555; /* Slightly darker text */
+}
+
 </style>
 
 <script>
