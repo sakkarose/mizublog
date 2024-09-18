@@ -60,7 +60,7 @@
     color: #333; /* Darker text */
 }
 
-#lastfm-recent-track .scrobble-count {
+#lastfm-recent-track .now-playing {
     margin-top: 5px;
     font-size: 0.8em;
     color: #666; /* Even lighter text for scrobble count */
@@ -86,7 +86,7 @@
             const songName = track.name;
             const albumName = track.album['#text'];
             const artworkUrl = track.image[3]['#text'];
-			const scrobbleCount = track.playcount;
+			const nowPlaying = track['@attr'] && track['@attr']['nowplaying']; 
 
             // Format the track information
             const formattedTrack = `${artist} - ${songName}`;
@@ -99,23 +99,23 @@
             artworkElement.src = artworkUrl;
             artworkElement.alt = `Album artwork for ${albumName}`;
 			
-			const scrobbleCountElement = document.createElement('p');
-			scrobbleCountElement.classList.add('scrobble-count');
-			scrobbleCountElement.textContent = `Scrobbled ${scrobbleCount} times`;
+			const nowPlayingElement = document.createElement('p');
+			nowPlayingElement.classList.add('now-playing');
+			nowPlayingElement.textContent = nowPlaying ? "Now playing" : "Most recent track";
 
-            // Update the HTML element with the formatted track, album, and artwork
             const trackContainer = document.getElementById('lastfm-recent-track');
             trackContainer.innerHTML = `
-                <img src="${artworkUrl}" alt="Album artwork for ${albumName}">
+                <img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
                 <div class="track-info">
-                    <h3>${formattedTrack}</h3>
+                    <h3>${songName}</h3>
+                    <p>${artist}</p>
                     <p>${albumName}</p>
-                    ${scrobbleCountElement.outerHTML} 
+                    ${nowPlayingElement.outerHTML} 
                 </div>
             `;
         })
         .catch(error => {
             console.error('Error fetching recent tracks:', error);
-            document.getElementById('lastfm-recent-track').innerHTML = '<p>Error fetching recent track.</p>';
+            document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
         });
 </script>
