@@ -50,7 +50,7 @@ body {
   code {
     @include hyphens(manual);
   }
-  a {
+  a:not(.track-title a) {
     color: $color-text;
     text-decoration: none;
 
