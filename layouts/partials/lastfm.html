@@ -1,4 +1,4 @@
-{{ $response := resources.GetRemote "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USERNAME}&api_key=${LASTFM_API_KEY}&limit=1&format=json"}}
+{{ $response := resources.GetRemote "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USERNAME}&api_key=${LASTFM_API_KEY}&limit=1&format=json" }}
 {{ $data := $response.Content | transform.Unmarshal }}
 {{ range $data.recenttracks.track }}
 <li>{{ .name }} by {{ .artist.#text }}</li>
