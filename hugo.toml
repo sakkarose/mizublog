@@ -94,11 +94,11 @@ weight = 4
     link = "https://www.linkedin.com/in/dau-trong-hoang/"
   [[params.social]]
     name = "email"
-    link = "ame@mizu.reisen"  # no need for "mailto:" in the head
+    link = "ame@mizu.reisen"
   [[params.social]]
     name = "discord"
     link = "https://discordapp.com/users/355703385133154304"
     
 [security]
   [security.funcs]
-    getenv = ['^HUGO_', '^CI$', '^LASTFM_API_KEY$']
+    getenv = ['^HUGO_', '^CI$', '^LASTFM_API_KEY$', '^LASTFM_USERNAME$']
