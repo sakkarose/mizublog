@@ -50,7 +50,7 @@
     text-align: left; 
 }
 
-#lastfm-recent-track .track-info h3 span {
+#lastfm-recent-track .track-info .track-title span {
     margin: 0 0 5px; /* Add bottom margin */
     font-size: 1.1em; 
     font-weight: bold; /* Slightly less bold */
@@ -63,12 +63,12 @@
 		bottom/var(--i,90%) var(--t) no-repeat;
 	padding: 0 .25em calc(var(--t) + .1em);
 	-webkit-box-decoration-break: clone;
-            box-decoration-break: clone;
+    box-decoration-break: clone;
 	transition: .3s;
 	cursor: pointer;
 }
 
-#lastfm-recent-track .track-info h3:hover span {
+#lastfm-recent-track .track-info .track-title hover span {
 	--i: 100%;
 }
 
@@ -122,7 +122,7 @@
             trackContainer.innerHTML = `
                 <img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
                 <div class="track-info">
-                    <h3><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
+                    <h3 class="track-title"><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
                     <p>${artist}</p>
                     <p>${albumName}</p>
                     ${nowPlayingElement.outerHTML} 
