@@ -68,8 +68,8 @@
 
 <script>
     // Replace with your actual Last.fm API key and username
-	const apiKey = LASTFM_API_KEY; 
-	const username = LASTFM_USERNAME;
+	const apiKey = context.env.LASTFM_API_KEY; 
+	const username = context.env.LASTFM_USERNAME;
 
     // Construct the Last.fm API URL
     const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;  
