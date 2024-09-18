@@ -15,9 +15,6 @@
    border-radius: 5px; /* Rounded corners */
    text-align: center; /* Center content */
    font-family: sans-serif;
-   display: flex; /* Use flexbox for better layout control */
-   align-items: center; /* Vertically center content */
-   justify-content: space-around; /* Distribute space evenly */
 }
 
 #lastfm-recent-track p {
@@ -29,30 +26,45 @@
    height: auto;
    border-radius: 3px; /* Slightly rounded image corners */
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-   width: 150px; /* Set a fixed width for the album art */
-   height: 150px; /* Maintain aspect ratio */
-   margin-right: 20px; /* Add space between image and text */
+}
+
+#lastfm-recent-track {
+    display: flex; 
+    align-items: center;
+    background-color: #e0f2f1; /* Match the image background */
+    border: none; /* Remove border */
+    padding: 15px; 
+    border-radius: 8px; /* Slightly more rounded corners */
+}
+
+#lastfm-recent-track img {
+    width: 80px; 
+    height: 80px; 
+    margin-right: 15px;
+    border-radius: 5px; /* More rounded corners for the image */
 }
 
 #lastfm-recent-track .track-info {
-    /* Style the text information */
     text-align: left; 
 }
 
 #lastfm-recent-track .track-info h3 {
-    /* Style the track title */
-    margin: 0;
-    font-size: 1.2em;
-    font-weight: bold;
+    margin: 0 0 5px; /* Add bottom margin */
+    font-size: 1.1em; 
+    font-weight: 600; /* Slightly less bold */
 }
 
 #lastfm-recent-track .track-info p {
-    /* Style the artist and album */
-    margin: 5px 0 0;
+    margin: 0;
     font-size: 0.9em;
-    color: #555; /* Slightly darker text */
+    color: #333; /* Darker text */
 }
 
+#lastfm-recent-track .scrobble-count {
+    margin-top: 5px;
+    font-size: 0.8em;
+    color: #666; /* Even lighter text for scrobble count */
+}
 </style>
 
 <script>
@@ -73,7 +85,8 @@
             const artist = track.artist['#text'];
             const songName = track.name;
             const albumName = track.album['#text'];
-            const artworkUrl = track.image[3]['#text']; // Get a medium-sized image
+            const artworkUrl = track.image[3]['#text'];
+			const scrobbleCount = track.playcount;
 
             // Format the track information
             const formattedTrack = `${artist} - ${songName}`;
@@ -85,12 +98,21 @@
             const artworkElement = document.createElement('img');
             artworkElement.src = artworkUrl;
             artworkElement.alt = `Album artwork for ${albumName}`;
+			
+			const scrobbleCountElement = document.createElement('p');
+			scrobbleCountElement.classList.add('scrobble-count');
+			scrobbleCountElement.textContent = `Scrobbled ${scrobbleCount} times`;
 
             // Update the HTML element with the formatted track, album, and artwork
             const trackContainer = document.getElementById('lastfm-recent-track');
-            trackContainer.innerHTML = `<p>${formattedTrack}</p>`;
-            trackContainer.appendChild(albumElement);
-            trackContainer.appendChild(artworkElement);
+            trackContainer.innerHTML = `
+                <img src="${artworkUrl}" alt="Album artwork for ${albumName}">
+                <div class="track-info">
+                    <h3>${formattedTrack}</h3>
+                    <p>${albumName}</p>
+                    ${scrobbleCountElement.outerHTML} 
+                </div>
+            `;
         })
         .catch(error => {
             console.error('Error fetching recent tracks:', error);
