@@ -1,20 +1,37 @@
-{{ $lastfm_user := "thweenty7" }} {{/* Replace with your Last.fm username */}}
-{{ $lastfm_api_key := "77b62fb7f97cba21d533b1eb39ec6ee5" }} {{/* Replace with your Last.fm API key */}}
+{{/* 
+   partials/lastfm-recent-track.html 
+   This Hugo partial fetches and displays your recent track from Last.fm
+*/}}
 
-{{ $url := printf "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=%s&api_key=%s&format=json&limit=1" $lastfm_user $lastfm_api_key }}
+<div id="lastfm-recent-track">
+    <p>Loading recent track...</p>
+</div>
 
-{{ with getJSON $url }}
-  {{ with .recenttracks.track }}
-    {{ $track := index . 0 }} {{/* Get the first track */}}
-    {{ $artist := $track.artist.#text }} {{/* Access artist name */}}
-    {{ $trackName := $track.name.#text }} {{/* Access track name */}}
+<script>
+    // Replace with your actual Last.fm API key and username
+    const apiKey = '77b62fb7f97cba21d533b1eb39ec6ee5'; 
+    const username = 'thweenty7';
 
-    <p>
-      {{ $artist }} - {{ $trackName }}
-    </p>
-  {{ else }}
-    <p>No recent tracks found.</p>
-  {{ end }}
-{{ else }}
-  <p>Error fetching data from Last.fm.</p>
-{{ end }}
+    // Construct the Last.fm API URL
+    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;
+
+    // Fetch recent tracks from Last.fm API
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            // Extract the latest track information
+            const track = data.recenttracks.track[0];
+            const artist = track.artist['#text'];
+            const songName = track.name;
+
+            // Format the track information
+            const formattedTrack = `${artist} - ${songName}`;
+
+            // Update the HTML element with the formatted track
+            document.getElementById('lastfm-recent-track').innerHTML = `<p>${formattedTrack}</p>`;
+        })
+        .catch(error => {
+            console.error('Error fetching recent tracks:', error);
+            document.getElementById('lastfm-recent-track').innerHTML = '<p>Error fetching recent track.</p>';
+        });
+</script>
