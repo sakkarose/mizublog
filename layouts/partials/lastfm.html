@@ -2,6 +2,6 @@
 {{ $data := $response.Content | transform.Unmarshal }}
 {{ range $data.recenttracks.track }}
 ```html
-  <li>{{ .name }} by {{ .artist.#text }}</li>
+  <li>{{ .name }} by {{ htmlEscape ".artist.#text" }}</li>
 ```
 {{ end }}
