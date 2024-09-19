@@ -37,18 +37,6 @@
 	margin: 0 0 5px;
     font-size: 1.1em; 
     font-weight: bold;
-	color: #4c4f69;
-	--a: -45deg;
-    --t: .23em;
-	--_s: calc(var(--t)*cos(var(--a)));
-	background:
-		linear-gradient(var(--a),#0000 var(--_s),currentColor 0 calc(100% - var(--_s)),#0000 0) 
-		bottom/var(--i,90%) var(--t) no-repeat;
-	padding: 0 .25em calc(var(--t) + .1em);
-	-webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-	transition: .3s;
-	cursor: pointer;
 }
 
 #lastfm-recent-track .track-info .track-title:hover span {
