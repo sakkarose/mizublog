@@ -71,8 +71,8 @@
 }
 
 #lastfm-recent-track .now-playing {
-    font-size: 0.8em;
-    color: #4c4f69
+	font-size: 1.5em;
+    color: #4c4f69;
 }
 </style>
 
@@ -104,7 +104,7 @@
                 const trackContainer = document.getElementById('lastfm-recent-track');
                 trackContainer.innerHTML = `
                     <div> 
-						<h2><span class="now-playing">${nowPlaying}</h2> 
+						<h2><i class="fa-brands fa-square-lastfm"></i><span class="now-playing">${nowPlaying}</h2> 
 						<div style="display: flex; align-items: left;"> 
 							<img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
 							<div class="track-info">
