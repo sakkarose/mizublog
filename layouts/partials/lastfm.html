@@ -113,7 +113,7 @@
 
                 const trackContainer = document.getElementById('lastfm-recent-track');
                 trackContainer.innerHTML = `
-                    <h2>${nowPlaying}</h2><br>
+                    <div><h2>${nowPlaying}</h2></div>
 					<img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
                     <div class="track-info">
                         <h3 class="track-title"><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
