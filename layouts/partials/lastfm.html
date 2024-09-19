@@ -31,12 +31,13 @@
 }
 
 #lastfm-recent-track {
-    display: flex; 
+    display: block; 
     align-items: center;
     background-color: #e0f2f1; /* Match the image background */
     border: none; /* Remove border */
     padding: 15px; 
     border-radius: 8px; /* Slightly more rounded corners */
+	text-align: center;
 }
 
 #lastfm-recent-track img {
@@ -44,10 +45,12 @@
     height: 80px; 
     margin-right: 15px;
     border-radius: 5px; /* More rounded corners for the image */
+	float: left;
 }
 
 #lastfm-recent-track .track-info {
     text-align: left; 
+	overflow: hidden;
 }
 
 #lastfm-recent-track .track-info .track-title span {
@@ -113,8 +116,8 @@
 
                 const trackContainer = document.getElementById('lastfm-recent-track');
                 trackContainer.innerHTML = `
-                    <div style="display: flex; flex-direction: column;"> 
-						<h2>${nowPlaying}</h2>
+                    <div> 
+						<h2><span class="math-inline">${nowPlaying}</h2> 
 						<div style="display: flex; align-items: center;"> 
 							<img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
 							<div class="track-info">
@@ -123,7 +126,7 @@
 								<p>${albumName}</p>
 							</div>
 						</div>
-					</div>
+				    </div>
                 `;
             })
             .catch(error => {
