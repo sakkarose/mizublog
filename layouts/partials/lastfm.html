@@ -16,7 +16,7 @@
    border: 1px solid #ddd;
    padding: 20px;
    border-radius: 5px;
-   text-align: center;
+   text-align: left;
 }
 
 #lastfm-recent-track p {
@@ -117,7 +117,7 @@
                 trackContainer.innerHTML = `
                     <div> 
 						<h2><span class="math-inline">${nowPlaying}</h2> 
-						<div style="display: flex; align-items: center;"> 
+						<div style="display: flex; align-items: left;"> 
 							<img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
 							<div class="track-info">
 								<h3 class="track-title"><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
