@@ -101,7 +101,7 @@
                 const songName = track.name;
                 const albumName = track.album['#text'];
                 const artworkUrl = track.image[3]['#text'];
-                const nowPlaying = "Recently played";
+                const nowPlaying = "Recently played"; // You've hardcoded this, so it will always display "Recently played"
                 const songUrl = track.url
 
                 const albumElement = document.createElement('p');
@@ -113,8 +113,7 @@
 
                 const trackContainer = document.getElementById('lastfm-recent-track');
                 trackContainer.innerHTML = `
-					<h2>${nowPlaying}</h2>
-                    <img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
+                    <h2>${nowPlaying}</h2> <img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
                     <div class="track-info">
                         <h3 class="track-title"><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
                         <p>${artist}</p>
