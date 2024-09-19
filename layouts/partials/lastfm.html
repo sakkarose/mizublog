@@ -88,50 +88,55 @@
 
 <script>
     // Replace with your actual Last.fm API key and username
-	const apiKey = "{{ $lastfmapiKey }}"; 
-	const username = "{{ $lastfmusername }}";
+    const apiKey = "{{ $lastfmapiKey }}"; 
+    const username = "{{ $lastfmusername }}";
 
     // Construct the Last.fm API URL
-    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;  
+    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;  
 
+    function fetchData() {
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Extract the latest track information
+                const track = data.recenttracks.track[0];
+                const artist = track.artist['#text'];
+                const songName = track.name;
+                const albumName = track.album['#text'];
+                const artworkUrl = track.image[3]['#text'];
+                const nowPlaying = track['@attr'] && track['@attr']['nowplaying'];
+                const songUrl = track.url
 
-    // Fetch recent tracks from Last.fm API
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            // Extract the latest track information
-            const track = data.recenttracks.track[0];
-            const artist = track.artist['#text'];
-            const songName = track.name;
-            const albumName = track.album['#text'];
-            const artworkUrl = track.image[3]['#text'];
-			const nowPlaying = track['@attr'] && track['@attr']['nowplaying'];
-			const songUrl = track.url
+                const albumElement = document.createElement('p');
+                albumElement.textContent = albumName;
 
-            const albumElement = document.createElement('p');
-            albumElement.textContent = albumName;
+                const artworkElement = document.createElement('img');
+                artworkElement.src = artworkUrl;
+                artworkElement.alt = `Album artwork for ${albumName}`;
 
-            const artworkElement = document.createElement('img');
-            artworkElement.src = artworkUrl;
-            artworkElement.alt = `Album artwork for ${albumName}`;
-			
-			const nowPlayingElement = document.createElement('p');
-			nowPlayingElement.classList.add('now-playing');
-			nowPlayingElement.textContent = nowPlaying ? "Now playing" : "Most recent track";
+                const nowPlayingElement = document.createElement('p');
+                nowPlayingElement.classList.add('now-playing');
+                nowPlayingElement.textContent = nowPlaying ? "Now playing" : "Most recent track";
 
-            const trackContainer = document.getElementById('lastfm-recent-track');
-            trackContainer.innerHTML = `
-                <img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
-                <div class="track-info">
-                    <h3 class="track-title"><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
-                    <p>${artist}</p>
-                    <p>${albumName}</p>
-                    ${nowPlayingElement.outerHTML} 
-                </div>
-            `;
-        })
-        .catch(error => {
-            console.error('Error fetching recent tracks:', error);
-            document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
-        });
+                const trackContainer = document.getElementById('lastfm-recent-track');
+                trackContainer.innerHTML = `
+                    <img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
+                    <div class="track-info">
+                        <h3 class="track-title"><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
+                        <p>${artist}</p>
+                        <p>${albumName}</p>
+                        ${nowPlayingElement.outerHTML} 
+                    </div>
+                `;
+            })
+            .catch(error => {
+                console.error('Error fetching recent tracks:', error);
+                document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
+            })
+            .finally(() => { // Correct indentation here
+                setTimeout(fetchData, 10000); // Call fetchData again after 10 seconds
+            });
+    }
+
+    fetchData(); // Initial call
 </script>
