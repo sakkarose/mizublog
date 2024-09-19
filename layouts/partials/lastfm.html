@@ -1,142 +1,124 @@
 {{/* 
-   partials/lastfm-recent-track.html 
-   This Hugo partial fetches and displays your recent track from Last.fm
+   partials/lastfm-recent-track.html 
+   This Hugo partial fetches and displays your recent track from Last.fm
 */}}
 
 {{ $lastfmapiKey := getenv "LASTFM_API_KEY" }}
 {{ $lastfmusername := getenv "LASTFM_USERNAME" }}
 
 <div id="lastfm-recent-track">
-    <p>Pulling Last.fm API ...</p>
+    <p>Pulling Last.fm API ...</p>
 </div>
 
 <style>
+/* Basic Styling for the Container */
 #lastfm-recent-track {
-   background-color: #f0f0f0; /* Light background */
-   border: 1px solid #ddd; /* Subtle border */
-   padding: 20px;
-   border-radius: 5px; /* Rounded corners */
-   text-align: center; /* Center content */
+    display: block; 
+    align-items: left;
+    background-color: #e0f2f1;
+    border: none;
+    padding: 15px; 
+    border-radius: 8px;
+    text-align: center; /* Center content initially */
 }
 
-#lastfm-recent-track p {
-   margin-bottom: 10px;
-}
-
+/* Image Styling */
 #lastfm-recent-track img {
-   max-width: 100%;
-   height: auto;
-   border-radius: 3px; /* Slightly rounded image corners */
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 80px; 
+    height: 80px; 
+    margin-right: 15px;
+    border-radius: 5px;
+    float: left;
+    max-width: 100%; /* Ensure image scales down if needed */
+    height: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-#lastfm-recent-track {
-    display: block; 
-    align-items: center;
-    background-color: #e0f2f1; /* Match the image background */
-    border: none; /* Remove border */
-    padding: 15px; 
-    border-radius: 8px; /* Slightly more rounded corners */
-	text-align: center;
-}
-
-#lastfm-recent-track img {
-    width: 80px; 
-    height: 80px; 
-    margin-right: 15px;
-    border-radius: 5px; /* More rounded corners for the image */
-	float: left;
-}
-
+/* Track Information Styling */
 #lastfm-recent-track .track-info {
-    text-align: left; 
-	overflow: hidden;
+    text-align: left; 
+    overflow: hidden; /* Hide any overflow from long text */
 }
 
 #lastfm-recent-track .track-info .track-title span {
-    text-decoration: none;
-	margin: 0 0 5px; /* Add bottom margin */
-    font-size: 1.1em; 
-    font-weight: bold; /* Slightly less bold */
-	color: #4c4f69;
-	--a: -45deg;
-    --t: .23em;
-	--_s: calc(var(--t)*cos(var(--a)));
-	background:
-		linear-gradient(var(--a),#0000 var(--_s),currentColor 0 calc(100% - var(--_s)),#0000 0) 
-		bottom/var(--i,90%) var(--t) no-repeat;
-	padding: 0 .25em calc(var(--t) + .1em);
-	-webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-	transition: .3s;
-	cursor: pointer;
+    text-decoration: none;
+    margin: 0 0 5px;
+    font-size: 1.1em; 
+    font-weight: bold;
+    color: #4c4f69;
+    --a: -45deg;
+    --t: .23em;
+    --_s: calc(var(--t)*cos(var(--a)));
+    background:
+        linear-gradient(var(--a),#0000 var(--_s),currentColor 0 calc(100% - var(--_s)),#0000 0) 
+        bottom/var(--i,90%) var(--t) no-repeat;
+    padding: 0 .25em calc(var(--t) + .1em);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transition: .3s;
+    cursor: pointer;
 }
 
 #lastfm-recent-track .track-info .track-title:hover span {
-	--i: 100%;
+    --i: 100%;
 }
 
 #lastfm-recent-track .track-info p {
-    margin: 0;
-    font-size: 0.9em;
-    color: #5c5f77;
+    margin: 0;
+    font-size: 0.9em;
+    color: #5c5f77;
 }
 
+/* Now Playing Text Styling */
 #lastfm-recent-track .now-playing {
-    margin-top: 5px;
-    font-size: 0.8em;
-    color: #6c6f85;
+    margin-top: 5px;
+    font-size: 0.8em;
+    color: #6c6f85;
 }
 </style>
 
 <script>
-    const apiKey = "{{ $lastfmapiKey }}"; 
-    const username = "{{ $lastfmusername }}";
-    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;  
+    const apiKey = "{{ $lastfmapiKey }}"; 
+    const username = "{{ $lastfmusername }}";
+    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;  
 
-    function fetchData() {
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                // Extract the latest track information
-                const track = data.recenttracks.track[0];
-                const artist = track.artist['#text'];
-                const songName = track.name;
-                const albumName = track.album['#text'];
-                const artworkUrl = track.image[3]['#text'];
-                const nowPlaying = "Recently played";
-                const songUrl = track.url
+    function fetchData() {
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Extract the latest track information
+                const track = data.recenttracks.track[0];
+                const artist = track.artist['#text'];
+                const songName = track.name;
+                const albumName = track.album['#text'];
+                const artworkUrl = track.image[3]['#text'];
+                const nowPlaying = "Recently played";
+                const songUrl = track.url
 
-                const albumElement = document.createElement('p');
-                albumElement.textContent = albumName;
+                // Update the track container's HTML directly
+                const trackContainer = document.getElementById('lastfm-recent-track');
+                trackContainer.innerHTML = `
+                    <div> 
+                        <h2><span class="math-inline">${nowPlaying}</h2> 
+                        <div style="display: flex; align-items: center;"> 
+                            <img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
+                            <div class="track-info">
+                                <h3 class="track-title"><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
+                                <p>${artist}</p>
+                                <p>${albumName}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            })
+            .catch(error => {
+                console.error('Error fetching recent tracks:', error);
+                document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
+            })
+            .finally(() => {
+                setTimeout(fetchData, 10000);
+            });
+    }
 
-                const artworkElement = document.createElement('img');
-                artworkElement.src = artworkUrl;
-                artworkElement.alt = `Album artwork for ${albumName}`;
-
-                const trackContainer = document.getElementById('lastfm-recent-track');
-                trackContainer.innerHTML = `
-                    <div> 
-						<h2><span class="math-inline">${nowPlaying}</h2> 
-						<div style="display: flex; align-items: center;"> 
-							<img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
-							<div class="track-info">
-								<h3 class="track-title"><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
-								<p>${artist}</p>
-								<p>${albumName}</p>
-							</div>
-						</div>
-				    </div>
-                `;
-            })
-            .catch(error => {
-                console.error('Error fetching recent tracks:', error);
-                document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
-            })
-            .finally(() => {
-                setTimeout(fetchData, 10000);
-            });
-    }
-
-    fetchData();
+    fetchData();
 </script>
