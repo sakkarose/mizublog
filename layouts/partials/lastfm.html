@@ -116,7 +116,7 @@
 
                 const nowPlayingElement = document.createElement('p');
                 nowPlayingElement.classList.add('now-playing');
-                nowPlayingElement.textContent = nowPlaying ? "Now playing" : "Most recent track";
+                nowPlayingElement.textContent = "Recently played";
 
                 const trackContainer = document.getElementById('lastfm-recent-track');
                 trackContainer.innerHTML = `
@@ -133,10 +133,10 @@
                 console.error('Error fetching recent tracks:', error);
                 document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
             })
-            .finally(() => { // Correct indentation here
-                setTimeout(fetchData, 10000); // Call fetchData again after 10 seconds
+            .finally(() => {
+                setTimeout(fetchData, 10000);
             });
     }
 
-    fetchData(); // Initial call
+    fetchData();
 </script>
