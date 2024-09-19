@@ -113,13 +113,17 @@
 
                 const trackContainer = document.getElementById('lastfm-recent-track');
                 trackContainer.innerHTML = `
-                    <div><h2>${nowPlaying}</h2></div>
-					<img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
-                    <div class="track-info">
-                        <h3 class="track-title"><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
-                        <p>${artist}</p>
-                        <p>${albumName}</p>
-                    </div>
+                    <div style="display: flex; flex-direction: column;"> 
+						<h2>${nowPlaying}</h2>
+						<div style="display: flex; align-items: center;"> 
+							<img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
+							<div class="track-info">
+								<h3 class="track-title"><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
+								<p>${artist}</p>
+								<p>${albumName}</p>
+							</div>
+						</div>
+					</div>
                 `;
             })
             .catch(error => {
