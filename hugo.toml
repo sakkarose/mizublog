@@ -51,9 +51,9 @@ weight = 4
   colortheme = "latte"
   
   description = """
-  Hi, formally I can go by Hoang. A friendly way is using my alias (mizu, reisen).\n
-  currently i'm setting up the security and compliance foundation for a small org and sometimes i do consultant projects to study different security approaches and usecases.\n
-  I do journal about anything so have fun if you find something interesting.
+  formally i can go by Hoan, another friendly way is using my alias (mizu, reisen).\n
+  currently i'm setting up the security and compliance foundation for a small org, and sometimes i do consultant projects to study different security approaches and usecases.\n
+  my journal about my interests on anything so have fun if you find something interesting.
   """
   
   rss = true # generate rss feed. default value is false
