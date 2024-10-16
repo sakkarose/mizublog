@@ -1,0 +1,49 @@
+#lastfm-recent-track {
+  border: 1px solid #ddd;
+  padding: 0 25px 25px 25px;
+  border-radius: 5px;
+  text-align: left;
+  display: table;
+  background-color: #e0f2f1;
+}
+#lastfm-recent-track img {
+   width: 100px; 
+   height: 100px; 
+   margin-right: 20px;
+   border-radius: 5px;
+ float: left;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+#lastfm-recent-track .track-info {
+   text-align: left;
+}
+#lastfm-recent-track .track-info .track-title span {
+ margin: 0 0 5px;
+   font-size: 1.1em; 
+   font-weight: bold;
+ color: #4c4f69;
+ --a: -45deg;
+   --t: .23em;
+ --_s: calc(var(--t)*cos(var(--a)));
+ background:
+   linear-gradient(var(--a),#0000 var(--_s),currentColor 0 calc(100% - var(--_s)),#0000 0) 
+   bottom/var(--i,90%) var(--t) no-repeat;
+ padding: 0 .25em calc(var(--t) + .1em);
+ -webkit-box-decoration-break: clone;
+   box-decoration-break: clone;
+ transition: .3s;
+ cursor: pointer;
+}
+#lastfm-recent-track .track-info .track-title:hover span {
+ --i: 100%;
+}
+#lastfm-recent-track .track-info p {
+   margin: 0;
+   font-size: 0.9em;
+   color: #5c5f77;
+}
+#lastfm-recent-track .now-playing {
+ font-size: 1.1em;
+   color: #4c4f69;
+ 
+}
