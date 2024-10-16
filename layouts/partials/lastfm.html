@@ -73,8 +73,8 @@
       document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
     {{ else }}
       try {
-        // Safely pass the response content to JSON.parse
-        const responseContent = {{ $response.Content | jsStringLiteral }}; 
+        // Escape special characters in the response content
+        const responseContent = `{{ $response.Content | replaceRE "\"" "\\\"" }}`; 
         lastfmData = JSON.parse(responseContent);
       } catch (err) {
         console.error("Error parsing JSON:", err);
