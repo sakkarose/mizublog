@@ -42,8 +42,6 @@
   {{ end }}
   {{ end }}
   {{ if .Site.Config.Services.GoogleAnalytics.ID }}
-  {{ if .Site.Params.googleAnalyticsAsync }}
     {{ template "_internal/google_analytics.html" . }}
-  {{ end }}
   {{ end }}
 </head>
