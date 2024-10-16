@@ -69,7 +69,6 @@
         return response.json();
       })
       .then(data => {
-        console.log("Data from Worker:", data);
         const track = data.recenttracks.track[0];
         const artist = track.artist['#text'];
         const songName = track.name;
