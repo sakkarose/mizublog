@@ -3,17 +3,9 @@
 {{ $apiUrl := printf "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=%s&api_key=%s&format=json&limit=1" $lastfmusername $lastfmapiKey }}
 {{ $response := resources.GetRemote $apiUrl }}
 
-{{ if $response.Err }}
-  <script>
-    console.error("Error fetching Last.fm data:", {{ $response.Err }});
-    document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>'; 
-  </script>
-{{ else }}
-  {{ $jsonData := $response.JSON }}
-
-  <div id="lastfm-recent-track">
-    <p>Pulling Last.fm API ...</p>
-  </div>
+<div id="lastfm-recent-track">
+  <p>Pulling Last.fm API ...</p>
+</div>
 
 <style>
 #lastfm-recent-track {
@@ -74,29 +66,33 @@
 </style>
 
 <script>
-    const lastfmData = {{ $jsonData }}; 
-
-    // Process and display the Last.fm data
-    const track = lastfmData.recenttracks.track[0];
-    const artist = track.artist['#text'];
-    const songName = track.name;
-    const albumName = track.album['#text'];
-    const artworkUrl = track.image[3]['#text'];
-    const nowPlaying = "Recently played";
-    const songUrl = track.url;
-
-    const trackContainer = document.getElementById('lastfm-recent-track');
-    trackContainer.innerHTML = `
-      <div><h2><i class="fab fa-lastfm"></i> <span class="now-playing">${nowPlaying}</span></h2>
-        <div style="display: flex; align-items: left;">
-          <img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';">
-          <div class="track-info">
-            <h3 class="track-title"><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
-            <p>${artist}</p>
-            <p>${albumName}</p>
+    {{ if $response.Err }}
+      console.error("Error fetching Last.fm data:", {{ $response.Err }});
+      document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>'; 
+    {{ else }}
+      const lastfmData = {{ $response.JSON }};
+  
+      // Process and display the Last.fm data
+      const track = lastfmData.recenttracks.track[0];
+      const artist = track.artist['#text'];
+      const songName = track.name;
+      const albumName = track.album['#text'];
+      const artworkUrl = track.image[3]['#text'];
+      const nowPlaying = "Recently played";
+      const songUrl = track.url;
+  
+      const trackContainer = document.getElementById('lastfm-recent-track');
+      trackContainer.innerHTML = `
+        <div><h2><i class="fab fa-lastfm"></i> <span class="now-playing">${nowPlaying}</span></h2>
+          <div style="display: flex; align-items: left;">
+            <img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';">
+            <div class="track-info">
+              <h3 class="track-title"><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
+              <p>${artist}</p>
+              <p>${albumName}</p>
+            </div>
           </div>
         </div>
-      </div>
-    `;
-  </script>
-{{ end }} 
+      `;
+    {{ end }}
+</script>
