@@ -23,8 +23,7 @@ fetch('/lastfm-proxy')
           <img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';">
           <div class="track-info">
             <h3 class="track-title"><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
-            <p>${artist}</p>
-            <p>${albumName}</p>
+            <p class="artist">${artist}</p> <p class="album">${albumName}</p> 
           </div>
         </div>
       </div>
