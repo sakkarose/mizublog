@@ -73,14 +73,10 @@
       document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
     {{ else }}
       try {
-        // Access the JSON data and convert it to a string
-        const jsonData = {{ $response.JSON }}; 
-        const jsonString = JSON.stringify(jsonData);
-  
-        // Parse the JSON string back into a JavaScript object
-        lastfmData = JSON.parse(jsonString); 
+        // Instead of $response.JSON, use $response.Content directly
+        lastfmData = JSON.parse(`{{ $response.Content }}`); 
       } catch (err) {
-        console.error("Error processing JSON:", err);
+        console.error("Error parsing JSON:", err);
         document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
       }
     {{ end }}
