@@ -28,6 +28,6 @@ fetch('/lastfm-proxy')
     `;
   })
   .catch(err => {
-    console.error("Error fetching Last.fm data:", err);
+    console.error("Error fetching or parsing Last.fm data:", err); // Log the full error object
     document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
   });
