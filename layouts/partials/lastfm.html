@@ -1,11 +1,19 @@
 {{ $lastfmapiKey := getenv "LASTFM_API_KEY" }}
 {{ $lastfmusername := getenv "LASTFM_USERNAME" }}
 {{ $apiUrl := printf "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=%s&api_key=%s&format=json&limit=1" $lastfmusername $lastfmapiKey }}
+{{ $response := resources.GetRemote $apiUrl }}
 
+{{ if $response.Err }}
+  <script>
+    console.error("Error fetching Last.fm data:", {{ $response.Err }});
+    document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>'; 
+  </script>
+{{ else }}
+  {{ $jsonData := $response.JSON }}
 
-<div id="lastfm-recent-track">
+  <div id="lastfm-recent-track">
     <p>Pulling Last.fm API ...</p>
-</div>
+  </div>
 
 <style>
 #lastfm-recent-track {
@@ -66,52 +74,29 @@
 </style>
 
 <script>
-    //const apiKey = "{{ $lastfmapiKey }}"; 
-    //const username = "{{ $lastfmusername }}";
-    //const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;  
+    const lastfmData = {{ $jsonData }}; 
 
-    function fetchData() {
-        fetch('{{ $apiUrl }}')
-            .then(response => response.json())
-            .then(data => {
-                // Extract the latest track information
-                const track = data.recenttracks.track[0];
-                const artist = track.artist['#text'];
-                const songName = track.name;
-                const albumName = track.album['#text'];
-                const artworkUrl = track.image[3]['#text'];
-                const nowPlaying = "Recently played";
-                const songUrl = track.url
+    // Process and display the Last.fm data
+    const track = lastfmData.recenttracks.track[0];
+    const artist = track.artist['#text'];
+    const songName = track.name;
+    const albumName = track.album['#text'];
+    const artworkUrl = track.image[3]['#text'];
+    const nowPlaying = "Recently played";
+    const songUrl = track.url;
 
-                const albumElement = document.createElement('p');
-                albumElement.textContent = albumName;
-
-                const artworkElement = document.createElement('img');
-                artworkElement.src = artworkUrl;
-                artworkElement.alt = `Album artwork for ${albumName}`;
-
-                const trackContainer = document.getElementById('lastfm-recent-track');
-                trackContainer.innerHTML = `
-                    <div><h2><i class="fab fa-lastfm"></i> <span class="now-playing">${nowPlaying}</span></h2> 
-						<div style="display: flex; align-items: left;"> 
-							<img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';"> 
-							<div class="track-info">
-								<h3 class="track-title"><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
-								<p>${artist}</p>
-								<p>${albumName}</p>
-							</div>
-						</div>
-				    </div>
-                `;
-            })
-            .catch(error => {
-                console.error('Error fetching recent tracks:', error);
-                document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
-            })
-            .finally(() => {
-                setTimeout(fetchData, 10000);
-            });
-    }
-
-    fetchData();
-</script>
+    const trackContainer = document.getElementById('lastfm-recent-track');
+    trackContainer.innerHTML = `
+      <div><h2><i class="fab fa-lastfm"></i> <span class="now-playing">${nowPlaying}</span></h2>
+        <div style="display: flex; align-items: left;">
+          <img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';">
+          <div class="track-info">
+            <h3 class="track-title"><span><a href="${songUrl}" target="_blank">${songName}</a></span></h3>
+            <p>${artist}</p>
+            <p>${albumName}</p>
+          </div>
+        </div>
+      </div>
+    `;
+  </script>
+{{ end }} 
