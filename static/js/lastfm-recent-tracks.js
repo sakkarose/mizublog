@@ -1,13 +1,17 @@
 fetch('/lastfm-proxy')
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
   .then(data => {
-    // Access data directly from the response
-    const artist = data.artist; 
+    const artist = data.artist;
     const songName = data.name;
     const albumName = data.album;
-    const artworkUrl = data.artworkUrl; 
+    const artworkUrl = data.artworkUrl;
     const nowPlaying = "Recently played";
-    const songUrl = data.songUrl; 
+    const songUrl = data.songUrl;
 
     const trackContainer = document.getElementById('lastfm-recent-track');
     trackContainer.innerHTML = `
