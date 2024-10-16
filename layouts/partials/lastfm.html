@@ -72,9 +72,17 @@
       console.error("Error fetching Last.fm data:", {{ $response.Err }});
       document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
     {{ else }}
-      // This line is no longer needed since we're not using responseContent
-      // {{ $response.Content | safeJS }} 
-      lastfmData = {{ $response.JSON }}; 
+      try {
+        // Access the JSON data and convert it to a string
+        const jsonData = {{ $response.JSON }}; 
+        const jsonString = JSON.stringify(jsonData);
+  
+        // Parse the JSON string back into a JavaScript object
+        lastfmData = JSON.parse(jsonString); 
+      } catch (err) {
+        console.error("Error processing JSON:", err);
+        document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
+      }
     {{ end }}
   
     if (lastfmData) {
