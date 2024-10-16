@@ -1,13 +1,20 @@
 fetch('/lastfm-proxy')
   .then(response => {
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error(`Network response was not ok (status: ${response.status})`);
     }
     return response.json();
   })
   .then(data => {
-    // Check if the necessary properties exist in the data object
-    if (data && data.recenttracks && data.recenttracks.track && data.recenttracks.track[0]) {
+    console.log("Data received:", data); // Log the received data to the console
+
+    // Check if the necessary properties exist AND are not null or empty
+    if (data && data.recenttracks && data.recenttracks.track && 
+        data.recenttracks.track.length > 0 && data.recenttracks.track[0] &&
+        data.recenttracks.track[0].artist && data.recenttracks.track[0].name && 
+        data.recenttracks.track[0].album && data.recenttracks.track[0].image && 
+        data.recenttracks.track[0].url) {
+
       const track = data.recenttracks.track[0];
       const artist = track.artist['#text'];
       const songName = track.name;
