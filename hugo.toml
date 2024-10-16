@@ -101,4 +101,4 @@ weight = 4
     
 [security]
   [security.funcs]
-    getenv = ['^HUGO_', '^CI$', '^LASTFM_API_KEY$', '^LASTFM_USERNAME$']
+    getenv = ['^HUGO_', '^CI$']
