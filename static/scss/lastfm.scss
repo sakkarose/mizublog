@@ -21,7 +21,7 @@ $track-info-p-color: #5c5f77;
   .track-info {
     text-align: left;
 
-    h3 {
+    h3 { // This line was missing
       text-decoration: none; 
     }
 
