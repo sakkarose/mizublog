@@ -1,8 +1,7 @@
 {{ $lastfmapiKey := getenv "LASTFM_API_KEY" }}
 {{ $lastfmusername := getenv "LASTFM_USERNAME" }}
 {{ $apiUrl := printf "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=%s&api_key=%s&format=json&limit=1" $lastfmusername $lastfmapiKey }}
-{{ $response := resources.GetRemote $apiUrl }}
-{{ $jsonData := $response.JSON }}
+
 
 <div id="lastfm-recent-track">
     <p>Pulling Last.fm API ...</p>
