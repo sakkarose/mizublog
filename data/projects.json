@@ -1,14 +1,24 @@
 {
   "list": [
     {
-      "name":"Hugo",
-      "url":"https://gohugo.io/",
-      "desc":"The world’s fastest framework for building websites."
+      "name":"Personal Blog",
+      "url":"https://github.com/sakkarose/mizublog",
+      "desc":"I'm writing a blog with Hugo."
     },
     {
-      "name":"Hugo Themes",
-      "url":"https://github.com/gohugoio/hugoThemes",
-      "desc":"A curated directory of Hugo themes"
+      "name":"Ricing dotfiles",
+      "url":"https://github.com/sakkarose/boring-ahh-dotfiles",
+      "desc":"I'm ricing my laptop OS."
+    },
+    {
+      "name":"Custom APIs for Homepage",
+      "url":"https://github.com/sakkarose/json_api_homepage",
+      "desc":"I'm making custom API parsers for homepage."
+    },
+    {
+      "name":"WPA2 Hashcat Dictionaries & Rules",
+      "url":"https://github.com/sakkarose/vie_wpa2_pw",
+      "desc":"I'm writing custom dictionaries and rules which are used for WPA2 audits."
     }
   ]
 }
