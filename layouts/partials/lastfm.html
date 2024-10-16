@@ -61,16 +61,19 @@
 </style>
 
 <script>
-    // Fetch data from your Cloudflare Worker
-    fetch('/lastfm-proxy') // Replace with your actual Worker route
-      .then(response => response.json())
+    fetch('/lastfm-proxy') 
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
       .then(data => {
-        // Process and display the Last.fm data
         const track = data.recenttracks.track[0];
         const artist = track.artist['#text'];
         const songName = track.name;
         const albumName = track.album['#text'];
-        const artworkUrl = track.image[3]['#text'];
+        const artworkUrl = track.image[3]['#text']; 
         const nowPlaying = "Recently played";
         const songUrl = track.url;
   
