@@ -66,11 +66,14 @@
 </style>
 
 <script>
-    {{ if $response.Err }}
-      console.error("Error fetching Last.fm data:", {{ $response.Err }});
-      document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>'; 
-    {{ else }}
-      const lastfmData = {{ $response.JSON }};
+    {{ $jsonData := new(map[string]interface{}) }}
+    {{ err := unmarshal $response.Content $jsonData }}
+  
+    if ({{ err }}) {
+      console.error("Error unmarshalling JSON:", {{ err }}); 
+      document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
+    } else {
+      const lastfmData = {{ $jsonData }};
   
       // Process and display the Last.fm data
       const track = lastfmData.recenttracks.track[0];
@@ -94,5 +97,5 @@
           </div>
         </div>
       `;
-    {{ end }}
-</script>
+    } 
+  </script>
