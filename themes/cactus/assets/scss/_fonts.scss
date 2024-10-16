@@ -2,5 +2,48 @@
   font-style: normal;
   font-family: "Montserrat";
   font-display: swap;
-  src: local("Montserrat"), local("Montserrat"), url("../lib/Montserrat/fonts/webfonts/Montserrat-Regular.woff2") format("woff2"), url("../lib/Montserrat/fonts/webfonts/Montserrat-Regular.woff") format("woff"), url("../lib/Montserrat/fonts/eot/Montserrat-Regular.eot") format("embedded-opentype"), url("../lib/Montserrat/fonts/ttf/Montserrat-Regular.ttf") format("truetype");
-};
+  src: local("Montserrat"),
+       local("Montserrat"),
+       url("../lib/Montserrat/fonts/webfonts/Montserrat-Regular.woff2") format("woff2"),
+       url("../lib/Montserrat/fonts/webfonts/Montserrat-Regular.woff") format("woff"),
+       url("../lib/Montserrat/fonts/eot/Montserrat-Regular.eot") format("embedded-opentype"),
+       url("../lib/Montserrat/fonts/ttf/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-style: italic;
+  font-family: "Montserrat";
+  font-display: swap;
+  src: local("Montserrat Italic"),
+       local("Montserrat-Italic"),
+       url("../lib/Montserrat/fonts/webfonts/Montserrat-Italic.woff2") format("woff2"),
+       url("../lib/Montserrat/fonts/webfonts/Montserrat-Italic.woff") format("woff"),
+       url("../lib/Montserrat/fonts/eot/Montserrat-Italic.eot") format("embedded-opentype"), 
+       url("../lib/Montserrat/fonts/ttf/Montserrat-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: bold; 
+  font-family: "Montserrat";
+  font-display: swap;
+  src: local("Montserrat Bold"),
+       local("Montserrat-Bold"),
+       url("../lib/Montserrat/fonts/webfonts/Montserrat-Bold.woff2") format("woff2"),
+       url("../lib/Montserrat/fonts/webfonts/Montserrat-Bold.woff") format("woff"),
+       url("../lib/Montserrat/fonts/eot/Montserrat-Bold.eot") format("embedded-opentype"), 
+       url("../lib/Montserrat/fonts/ttf/Montserrat-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-style: italic;
+  font-weight: bold; 
+  font-family: "Montserrat";
+  font-display: swap;
+  src: local("Montserrat Bold Italic"),
+       local("Montserrat-BoldItalic"),
+       url("../lib/Montserrat/fonts/webfonts/Montserrat-BoldItalic.woff2") format("woff2"),
+       url("../lib/Montserrat/fonts/webfonts/Montserrat-BoldItalic.woff") format("woff"),
+       url("../lib/Montserrat/fonts/eot/Montserrat-BoldItalic.eot") format("embedded-opentype"), 
+       url("../lib/Montserrat/fonts/ttf/Montserrat-BoldItalic.ttf") format("truetype");
+}
