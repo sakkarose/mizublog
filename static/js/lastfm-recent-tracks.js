@@ -9,21 +9,13 @@ fetch('/lastfm-proxy')
     console.log("Data received:", data);
 
     // Check if data and required properties exist
-    if (data && data.artist && data.name && data.album && data.artworkUrl && data.songUrl) { 
-      const artist = data.artist;
-      const songName = data.name;
-      let albumName = data.album;
-      if (albumName === songName) {
-        albumName = "Single";
-      }
-      const artworkUrl = data.artworkUrl;
-      const songUrl = data.songUrl;
-      const nowPlaying = "Recently played";
+    if (data?.artist && data?.name && data?.album && data?.artworkUrl && data?.songUrl) { 
+      const { artist, name: songName, album: albumName, artworkUrl, songUrl } = data; 
 
       const trackContainer = document.getElementById('lastfm-recent-track');
       trackContainer.innerHTML = ` 
         <div>
-          <h2><i class="fab fa-lastfm"></i> <span class="now-playing">${nowPlaying}</span></h2>
+          <h2><i class="fab fa-lastfm"></i> <span class="now-playing">Recently Played</span></h2> 
           <div style="display: flex; align-items: left;">
             <img src="${artworkUrl}" alt="Album artwork for ${albumName}" onerror="this.src='path/to/default-image.jpg';">
             <div class="track-info">
@@ -35,7 +27,6 @@ fetch('/lastfm-proxy')
         </div>
       `;
     } else {
-      // Handle the case where the expected data is not found
       console.error("Last.fm data is missing expected properties:", data);
       document.getElementById('lastfm-recent-track').innerHTML = '<p>Unable to load your recent track. Please try again later.</p>';
     }
