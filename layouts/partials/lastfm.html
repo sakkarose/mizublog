@@ -72,7 +72,7 @@
     //const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;  
 
     function fetchData() {
-        fetch($apiUrl)
+        fetch('{{ $apiUrl }}')
             .then(response => response.json())
             .then(data => {
                 // Extract the latest track information
