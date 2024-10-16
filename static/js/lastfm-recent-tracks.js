@@ -12,7 +12,10 @@ fetch('/lastfm-proxy')
     if (data && data.artist && data.name && data.album && data.artworkUrl && data.songUrl) { 
       const artist = data.artist;
       const songName = data.name;
-      const albumName = data.album;
+      let albumName = data.album;
+      if (albumName === songName) {
+        albumName = "Single";
+      }
       const artworkUrl = data.artworkUrl;
       const songUrl = data.songUrl;
       const nowPlaying = "Recently played";
