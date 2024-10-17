@@ -3,34 +3,40 @@
   <link rel="preload" href="{{ "lib/font-awesome/webfonts/fa-regular-400.woff2" | relURL }}" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="{{ "lib/font-awesome/webfonts/fa-solid-900.woff2" | relURL }}" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ "lib/font-awesome/css/all.min.css" | relURL }}" type="text/css">
-  {{ if eq .Site.Params.Comments.enabled true }}
+  {{ if eq.Site.Params.Comments.enabled true }}
   <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
   <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
   {{ end }}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{ if .IsPage }} {{ .Title }} | {{ end }}{{ .Site.Title }}</title>
-  <link rel = 'canonical' href = '{{ .Permalink }}'>
-  {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+  <title>{{ if.IsPage }} {{.Title }} | {{ end }}{{.Site.Title }}</title>
+  <link rel = 'canonical' href = '{{.Permalink }}'>
+  {{ with.Site.Params.description }}<meta name="description" content="{{. }}">{{ end }}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  {{ template "_internal/opengraph.html" . }}
-  {{ template "_internal/twitter_cards.html" . }}
-  {{ .Scratch.Set "colortheme" "white"}}
-  {{ if .Site.Params.Colortheme }}
-    {{ .Scratch.Set "colortheme" .Site.Params.Colortheme }}
+  {{ template "_internal/opengraph.html". }}
+  {{ template "_internal/twitter_cards.html". }}
+  {{.Scratch.Set "colortheme" "white"}}
+  {{ if.Site.Params.Colortheme }}
+    {{.Scratch.Set "colortheme".Site.Params.Colortheme }}
   {{ end }}
-  {{ $colortheme := .Scratch.Get "colortheme" }}
+  {{ $colortheme :=.Scratch.Get "colortheme" }}
 
   {{- $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" "true") -}}
-  {{- $scssResource := resources.Get "scss/style.scss" -}}
-  {{- $styles := $scssResource | resources.ToCSS $options | resources.Fingerprint "sha512" }}
+  
+  {{ if eq $colortheme "latte" }}
+    {{ $scssResource := resources.Get "scss/colors/latte.scss" }}
+  {{ else }}
+    {{ $scssResource := resources.Get "scss/colors/white.scss" }}
+  {{ end }}
+  
+  {{ $styles := $scssResource | resources.ToCSS $options | resources.Fingerprint "sha512" }}
   <link rel="preload" href="{{ $styles.Permalink }}" as="style">
   <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
 
   <!-- Custom CSS -->
-  {{ range .Site.Params.css }} <link rel="stylesheet" href="{{ . | absURL }}"> {{ end }}
+  {{ range.Site.Params.css }} <link rel="stylesheet" href="{{. | absURL }}"> {{ end }}
   {{ `
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -38,13 +44,13 @@
     <![endif]-->
   ` | safeHTML }}
 
-  {{ partial "favicon.html" . }}
-  {{ if .Site.Params.rss }}
-  {{ with .OutputFormats.Get "RSS" }}
-    {{ printf `<link href="%s" rel="%s" type="%s" title="%s" />` .Permalink .Rel .MediaType.Type $.Site.Title | safeHTML }}
+  {{ partial "favicon.html". }}
+  {{ if.Site.Params.rss }}
+  {{ with.OutputFormats.Get "RSS" }}
+    {{ printf `<link href="%s" rel="%s" type="%s" title="%s" />`.Permalink.Rel.MediaType.Type $.Site.Title | safeHTML }}
   {{ end }}
   {{ end }}
-  {{ if .Site.Config.Services.GoogleAnalytics.ID }}
-    {{ template "_internal/google_analytics.html" . }}
+  {{ if.Site.Config.Services.GoogleAnalytics.ID }}
+    {{ template "_internal/google_analytics.html". }}
   {{ end }}
 </head>
