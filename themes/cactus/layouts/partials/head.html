@@ -2,8 +2,9 @@
   <link rel="preload" href="{{ "lib/font-awesome/webfonts/fa-brands-400.woff2" | relURL }}" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="{{ "lib/font-awesome/webfonts/fa-regular-400.woff2" | relURL }}" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="{{ "lib/font-awesome/webfonts/fa-solid-900.woff2" | relURL }}" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ "lib/font-awesome/css/all.min.css" | relURL }}" type="text/css">
   {{ if eq .Site.Params.Comments.enabled true }}
-  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js" noopener></script>
   <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
   {{ end }}
   <meta charset="utf-8">

@@ -6,19 +6,24 @@
       "desc":"I'm writing a blog with Hugo."
     },
     {
+      "name":"Hybrid Homelab",
+      "url":"",
+      "desc":"I'm setting up my homelab infrastructure with cloud servers and self-host servers for multiple purposes."
+    },
+    {
       "name":"Ricing dotfiles",
       "url":"https://github.com/sakkarose/boring-ahh-dotfiles",
       "desc":"I'm ricing my laptop OS."
     },
     {
-      "name":"Custom APIs for Homepage",
-      "url":"https://github.com/sakkarose/json_api_homepage",
-      "desc":"I'm making custom API parsers for homepage."
-    },
-    {
       "name":"WPA2 Hashcat Dictionaries & Rules",
       "url":"https://github.com/sakkarose/vie_wpa2_pw",
       "desc":"I'm writing custom dictionaries and rules which are used for WPA2 audits."
+    },
+    {
+      "name":"Custom APIs for Homepage",
+      "url":"https://github.com/sakkarose/json_api_homepage",
+      "desc":"I'm making custom API parsers for homepage."
     }
   ]
 }

@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
-{{ partial "head.html" . }}
+<html lang="{{.Site.LanguageCode }}">
+{{ partial "head.html". }}
 <body class="max-width mx-auto px3 ltr">
   <div class="content index py4">
 
-    {{ partial "header.html" . }}
+    {{ partial "header.html". }}
 
-    {{ block "main" . }}
+    {{ block "main". }}
     {{ end }}
 
-    {{ partial "footer.html" . }}
+    {{ partial "footer.html". }}
 
   </div>
 </body>
 
-<script src="https://kit.fontawesome.com/8881f1edc9.js" crossorigin="anonymous"></script>
 <script src={{ "lib/jquery/jquery.min.js" | relURL }}></script>
 <script src={{ "js/main.js" | relURL }}></script>
 </html>
