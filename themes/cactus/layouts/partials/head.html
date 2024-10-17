@@ -25,7 +25,7 @@
 
   {{- $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" "true") -}}
   
-  {{ if (eq $colortheme "latte") }}
+  {{ if eq $colortheme "latte" }}
     {{ $scssResource := resources.Get "scss/colors/latte.scss" }}
   {{ else }}
     {{ $scssResource := resources.Get "scss/colors/white.scss" }}
