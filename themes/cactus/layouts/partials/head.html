@@ -19,12 +19,11 @@
   {{ template "_internal/twitter_cards.html". }}
 
   {{- $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" "true") -}}
-  {{ $scssResource := "" }} <!-- Define the variable in the outer scope -->
-
+  
   {{ if eq.Site.Params.Colortheme "latte" }}
-    {{ $scssResource = resources.Get "scss/colors/latte.scss" }}
+    {{ $scssResource := resources.Get "scss/colors/latte.scss" }}
   {{ else }}
-    {{ $scssResource = resources.Get "scss/colors/white.scss" }}
+    {{ $scssResource := resources.Get "scss/colors/white.scss" }}
   {{ end }}
   
   {{ $styles := $scssResource | resources.ToCSS $options | resources.Fingerprint "sha512" }}
