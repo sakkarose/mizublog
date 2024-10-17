@@ -4,7 +4,7 @@
   <link rel="preload" href="{{ "lib/font-awesome/webfonts/fa-solid-900.woff2" | relURL }}" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ "lib/font-awesome/css/all.min.css" | relURL }}" type="text/css">
   {{ if eq .Site.Params.Comments.enabled true }}
-  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js" noopener></script>
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
   <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
   {{ end }}
   <meta charset="utf-8">
@@ -24,8 +24,9 @@
   {{ $colortheme := .Scratch.Get "colortheme" }}
 
   {{- $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" "true") -}}
-  {{- $styles := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "scss/style.scss" . | resources.ToCSS $options | resources.Fingerprint "sha512" }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}"> 
+  {{- $styles := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "scss/style.scss" | resources.ToCSS $options | resources.Fingerprint "sha512" }}
+  <link rel="preload" href="{{ $styles.Permalink }}" as="style">
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
 
   <!-- Custom CSS -->
   {{ range .Site.Params.css }} <link rel="stylesheet" href="{{ . | absURL }}"> {{ end }}
