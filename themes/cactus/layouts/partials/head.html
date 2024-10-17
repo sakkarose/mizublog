@@ -17,15 +17,10 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   {{ template "_internal/opengraph.html". }}
   {{ template "_internal/twitter_cards.html". }}
-  {{.Scratch.Set "colortheme" "white"}}
-  {{ if.Site.Params.Colortheme }}
-    {{.Scratch.Set "colortheme".Site.Params.Colortheme }}
-  {{ end }}
-  {{ $colortheme :=.Scratch.Get "colortheme" }}
 
   {{- $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" "true") -}}
   
-  {{ if (eq $colortheme "latte") }}
+  {{ if eq.Site.Params.Colortheme "latte" }}
     {{ $scssResource := resources.Get "scss/colors/latte.scss" }}
   {{ else }}
     {{ $scssResource := resources.Get "scss/colors/white.scss" }}
@@ -47,7 +42,7 @@
   {{ partial "favicon.html". }}
   {{ if.Site.Params.rss }}
   {{ with.OutputFormats.Get "RSS" }}
-    {{ printf `<link href="%s" rel="%s" type="%s" title="%s" />`.Permalink.Rel.MediaType.Type $.Site.Title | safeHTML }}
+    {{ printf `<link href="%s" rel="%s" type="%s" title="%s" />`.Permalink.Rel.MediaType.Type.Site.Title | safeHTML }}
   {{ end }}
   {{ end }}
   {{ if.Site.Config.Services.GoogleAnalytics.ID }}
