@@ -4,6 +4,7 @@ title = "mizu.reisen"
 theme = "cactus"
 copyright = "mizu"
 disqusShortname = "home"
+enableRobotsTXT = true
 # googleAnalytics = "UA-1234-5"
 
 summaryLength = 2
