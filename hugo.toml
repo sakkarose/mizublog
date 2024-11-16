@@ -73,20 +73,6 @@ weight = 4
   # Post page settings
   show_updated = true # default
   showReadTime = true # default
-     
-  # name value equals what's on https://fontawesome.com/icons?d=gallery&s=brands
-  [[params.social]]
-    name = "github"
-    link = "https://github.com/sakkarose"
-  [[params.social]]
-    name = "linkedin"
-    link = "https://www.linkedin.com/in/dau-trong-hoang/"
-  [[params.social]]
-    name = "email"
-    link = "business@mizu.reisen"
-  [[params.social]]
-    name = "discord"
-    link = "https://discordapp.com/users/355703385133154304"
     
 [security]
   [security.funcs]
