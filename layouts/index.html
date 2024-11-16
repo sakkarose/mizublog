@@ -6,10 +6,11 @@
     <span style="display: inline-flex;">
       {{ if isset .Site.Params "additional_description" }}
         {{ .Site.Params.additional_description | $.Page.RenderString }}
-        <a href="{{ .Site.Params.aboutSection | absURL }}"> here.<br></a>
+        <a href="{{ .Site.Params.aboutSection | absURL }}"> here.</a>
       {{ end }}
     </span>
   {{ if isset .Site.Params "additional_description_2" }}
+    <br>
     {{ .Site.Params.additional_description_2 | $.Page.RenderString }}
   {{ end }}
   </section>
