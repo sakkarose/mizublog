@@ -1,6 +1,5 @@
 {{ define "main" }}
-  <section id="about" style="white-space: nowrap;">
-  <span>
+  <section id="about" style="white-space: nowrap; display: inline-flex;">
   {{ if isset .Site.Params "description" }}
       {{ .Site.Params.description | $.Page.RenderString }}
       <a href="{{ .Site.Params.aboutSection | absURL }}">About</a>
@@ -8,7 +7,6 @@
   {{ if isset .Site.Params "additional_description" }}
     {{ .Site.Params.additional_description | $.Page.RenderString }}
   {{ end }}
-  </span>
   </section>
 
   <section id="misc">
