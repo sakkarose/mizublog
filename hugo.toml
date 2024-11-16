@@ -52,7 +52,7 @@ weight = 4
   
   description = """
   i'm a security engineer and technical consultant, with a strong interest for cybersecurity and compliance.\n
-  i can go by Hoang, or more friendly, mizu or reisen works too.\n
+  i can go by Hoang, or more friendly, mizu and reisen works too.\n
   more about me can be found at
   """
 
@@ -68,7 +68,6 @@ weight = 4
   postsOnHomePage = 5 # this option will be ignored if showAllPostsOnHomePage is set to true
   tagsOverview = true # show tags overview by default.
   showProjectsList = true # show projects list by default (if projects data file exists).
-  projectsUrl = "https://github.com/gohugoio" # title link for projects list
 
   # https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
   dateFormat = "2006-01-02" # default

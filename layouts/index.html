@@ -3,6 +3,7 @@
   {{ if isset .Site.Params "description" }}
     {{ .Site.Params.description | $.Page.RenderString }}
   {{ end }}
+  <span class="h1"><a href="{{ ./about | absURL }}">About</a></span>
   {{ if isset .Site.Params "additional_description" }}
     {{ .Site.Params.additional_description | $.Page.RenderString }}
   {{ end }}
@@ -26,7 +27,6 @@
     </span>
     <span class="h2">Most recent</span>
     {{ end }}
-
     {{ $showAllPostsOnHomePage := false }}
     {{ if (isset .Site.Params "showallpostsonhomepage") }}
       {{ $showAllPostsOnHomePage = .Site.Params.ShowAllPostsOnHomePage }}
@@ -73,7 +73,7 @@
       {{ $projectsUrl = .Site.Params.projectsUrl }}
     {{ end }}
   <section id="projects">
-    <span class="h1"><a href="{{ $projectsUrl }}">Projects</a></span>
+    <span class="h1">Projects</span>
     <ul class="project-list">
         {{ range .Site.Data.projects.list }}
         <li class="project-item">
