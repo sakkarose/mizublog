@@ -6,7 +6,10 @@
   {{ if isset .Site.Params "additional_description" }}
     {{ .Site.Params.additional_description | $.Page.RenderString }}
   {{ end }}
-  {{ partial "lastfm-recent-tracks.html" . }}
+  </section>
+
+  <section id="misc">
+    {{ partial "lastfm-recent-tracks.html" . }}
   </section>
 
   <section id="writing">
