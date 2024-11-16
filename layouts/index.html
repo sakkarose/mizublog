@@ -1,8 +1,9 @@
 {{ define "main" }}
   <section id="about">
   {{ if isset .Site.Params "description" }}
-    {{ .Site.Params.description | $.Page.RenderString }}
+    <span>{{ .Site.Params.description | $.Page.RenderString }}
     <a href="{{ .Site.Params.aboutSection | absURL }}">About</a>
+    </span>
   {{ end }}
   {{ if isset .Site.Params "additional_description" }}
     {{ .Site.Params.additional_description | $.Page.RenderString }}
