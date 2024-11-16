@@ -57,7 +57,7 @@ weight = 4
   """
 
   additional_description = """
-  thanks for stopping by!
+  \nthanks for stopping by!
   """
   
   rss = true # generate rss feed. default value is false
