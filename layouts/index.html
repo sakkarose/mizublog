@@ -3,6 +3,9 @@
   {{ if isset .Site.Params "description" }}
     {{ .Site.Params.description | $.Page.RenderString }}
   {{ end }}
+  {{ if isset .Site.Params "additional_description" }}
+    {{ .Site.Params.additional_description | $.Page.RenderString }}
+  {{ end }}
   {{ partial "lastfm-recent-tracks.html" . }}
   </section>
 
