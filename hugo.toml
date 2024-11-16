@@ -53,10 +53,13 @@ weight = 4
   description = """
   i'm a security engineer and technical consultant, with a strong interest for cybersecurity and compliance.\n
   i can go by Hoang, or more friendly, mizu and reisen works too.\n
-  more about me can be found at
   """
 
   additional_description = """
+  more about me can be found at
+  """
+
+  additional_description_2 = """
   thanks for stopping by!
   """
   

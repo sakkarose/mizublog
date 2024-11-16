@@ -1,12 +1,15 @@
 {{ define "main" }}
   <section id="about" style="white-space: nowrap;">
+    {{ if isset .Site.Params "description" }}
+        {{ .Site.Params.description | $.Page.RenderString }}
+    {{ end }}
     <span style="display: inline-flex;">
-  {{ if isset .Site.Params "description" }}
-      {{ .Site.Params.description | $.Page.RenderString }}
-      <a href="{{ .Site.Params.aboutSection | absURL }}">About</a>
-  {{ end }}
-</span>
-  {{ if isset .Site.Params "additional_description" }}
+      {{ if isset .Site.Params "additional_description" }}
+        {{ .Site.Params.description | $.Page.RenderString }}
+        <a href="{{ .Site.Params.aboutSection | absURL }}">About</a>
+      {{ end }}
+    </span>
+  {{ if isset .Site.Params "additional_description_2" }}
     {{ .Site.Params.additional_description | $.Page.RenderString }}
   {{ end }}
   </section>
