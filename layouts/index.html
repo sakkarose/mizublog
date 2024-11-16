@@ -11,10 +11,6 @@
         <a href="{{ .Site.Params.aboutSection | absURL }}">&nbsp;here.</a>
       {{ end }}
     </span>
-  {{ if isset .Site.Params "additional_description_2" }}
-    <br>
-    {{ .Site.Params.additional_description_2 | $.Page.RenderString }}
-  {{ end }}
   </section>
 
   <section id="misc">

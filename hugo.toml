@@ -59,10 +59,6 @@ weight = 4
   more about me can be found at 
   """
 
-  additional_description_2 = """
-  thanks for stopping by!
-  """
-  
   rss = true # generate rss feed. default value is false
   googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
   showAllPostsArchive = false # default
