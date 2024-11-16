@@ -56,7 +56,7 @@ weight = 4
   """
 
   additional_description = """
-  more about me can be found at 
+  more about me (and my cv) can be found at 
   """
 
   rss = true # generate rss feed. default value is false
