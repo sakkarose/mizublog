@@ -1,8 +1,10 @@
 {{ define "main" }}
-  <section id="about" style="white-space: nowrap;">
+  <section id="about">
+    <span style="white-space: nowrap;">
     {{ if isset .Site.Params "description" }}
         {{ .Site.Params.description | $.Page.RenderString }}
     {{ end }}
+    </span>
     <span style="display: inline-flex;">
       {{ if isset .Site.Params "additional_description" }}
         {{ .Site.Params.additional_description | $.Page.RenderString }}
