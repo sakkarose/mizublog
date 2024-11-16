@@ -3,7 +3,7 @@
   {{ if isset .Site.Params "description" }}
     {{ .Site.Params.description | $.Page.RenderString }}
   {{ end }}
-  <span class="h1"><a href="{{ ./about | absURL }}">About</a></span>
+  <span class="h1"><a href="{{ .Site.Params.aboutSection | absURL }}">About</a></span>
   {{ if isset .Site.Params "additional_description" }}
     {{ .Site.Params.additional_description | $.Page.RenderString }}
   {{ end }}
