@@ -16,7 +16,7 @@ Outside of my core responsibilities, I'm personally interested in embedded and o
 
 My 
 
-![GitHub](/images/github.png)
+![GitHub](/images/github-32x32.png)
 
 My CVs (I only have the summary one for now, I'm working on making specific field CVs)
 
