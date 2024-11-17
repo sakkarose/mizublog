@@ -18,4 +18,4 @@ When I'm not busy with my core responsibilities, you'll find me exploring the wo
 
 [My summary CV](</attachments/Summary CV - Nov24.pdf>)
 
-> 🚧 I only have the summary one for now, I'm working on making specific field CVs.
+🚧 ****I only have the summary one for now, I'm working on making specific field CVs.****
