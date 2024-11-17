@@ -19,4 +19,4 @@ My CVs (I only have the summary one for now, I'm working on making specific fiel
 My summary CV:
 [Summary-CV](</attachments/Summary CV - Nov24.pdf>)
 
-&nbsp;![test](/images/logo.webp)
+&nbsp;&nbsp;![test](/images/github-32x32.png)
