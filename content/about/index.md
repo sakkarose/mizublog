@@ -16,9 +16,10 @@ Outside of my core responsibilities, I'm personally interested in embedded and o
 
 My ...
 
-![Email](/images/envelop-solid.svg)
-![Github](/images/github-brands-solid.svg)
-![Linkedin](/images/linkedin-brands-solid.svg)
+<img src="/images/envelop-solid.svg" width="50" height="50">
+<img src="/images/github-brands-solid.svg" width="50" height="50">
+<img src="/images/linkedin-brands-solid.svg" width="50" height="50">
+
 
 My CVs (I only have the summary one for now, I'm working on making specific field CVs)
 
