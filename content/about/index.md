@@ -6,9 +6,22 @@ Greetings,
 
 I can go by Hoang, or if you'd like to get familiar, Mizu or Reisen work too.
 
-Currently I'm working mainly in security and compliance. Sometime I do join some technical consulting projects.
+My professional focus areas include security, compliance and technical consulting.
 
-Don't mind i'm having a lot of on my table. My organization is relatively small so I have a lot to cover.
+As part of a small organization, I have a lot on my table and I'm working on it so don't mind about it.
 
-Beside these, I'm also very interested about embedded stuffs and operating systems.
+Beside providing a secure and compliant enviroments, I enjoy diving into technical consulting projects to learn different security approaches and usecases from customers.
+
+Outside of my core responsibilities, I'm personally interested in embedded and operating systems.
+
+My ...
+
+![Email](/images/envelop-solid.svg)
+![Github](/images/github-brands-solid.svg)
+![Linkedin](/images/linkedin-brands-solid.svg)
+
+My CVs (I only have the summary one for now, I'm working on making specific field CVs)
+
+My summary CV:
+[Summary-CV](</attachments/Summary CV - Nov24.pdf>)
 
