@@ -14,7 +14,7 @@ Beside providing a secure and compliant enviroments, I enjoy diving into technic
 
 Outside of my core responsibilities, I'm personally interested in embedded and operating systems.
 
-My ...
+My 
 
 ![test](/images/test.svg)
 
