@@ -16,7 +16,7 @@ Outside of my core responsibilities, I'm personally interested in embedded and o
 
 My 
 
-![Linkedin](/images/linkedin.png)
+![GitHub](/images/github.png)
 
 My CVs (I only have the summary one for now, I'm working on making specific field CVs)
 
