@@ -14,10 +14,6 @@ Beside providing a secure and compliant enviroments, I enjoy diving into technic
 
 Outside of my core responsibilities, I'm personally interested in embedded and operating systems.
 
-My 
-
-![GitHub](/images/github-32x32.png)
-
 My CVs (I only have the summary one for now, I'm working on making specific field CVs)
 
 My summary CV:
