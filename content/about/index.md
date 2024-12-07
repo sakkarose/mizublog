@@ -26,8 +26,8 @@ My CVs:
 
 My Current Workstations
 
-Work Laptop:
-![](</attachments/fetch_w11.png>)
+Work Laptop
+![Work Laptop](</attachments/fetch_w11.png>)
 
-Homelab:
-![](</attachments/fetch_alpine.png>)
+Homelab
+![Homelab](</attachments/fetch_alpine.png>)
