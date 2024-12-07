@@ -16,7 +16,7 @@ When I'm not busy with my core responsibilities, you'll find me exploring the wo
 
 ---
 
-# My CVs:
+# My CVs
 
 [Summary CV - Last updated: Nov 2024](</attachments/Summary CV - Nov24.pdf>)
 
@@ -26,10 +26,10 @@ When I'm not busy with my core responsibilities, you'll find me exploring the wo
 
 # My Current Workstations
 
-## Work Laptop
+### Work Laptop
 
-![Work Laptop](</images/fetch_w11.png>)
+![](</images/fetch_w11.png>)
 
-## Homelab
+### Homelab
 
-![Homelab](</images//fetch_alpine.png>)
+![](</images//fetch_alpine.png>)
