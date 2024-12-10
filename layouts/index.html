@@ -1,12 +1,12 @@
 {{ define "main" }}
   <section id="about">
     <span style="white-space: nowrap;">
-    {{ if isset .Site.Params "description" }}
+    {{ if .Site.Params.description }}
         {{ .Site.Params.description | $.Page.RenderString }}
     {{ end }}
     </span>
     <span style="display: inline-flex;">
-      {{ if isset .Site.Params "additional_description" }}
+      {{ if .Site.Params.additional_description }}
         {{ .Site.Params.additional_description | $.Page.RenderString }}
         <a href="{{ .Site.Params.aboutSection | absURL }}">&nbsp;here.</a>
       {{ end }}
@@ -19,7 +19,7 @@
 
   <section id="writing">
     <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">{{ .Site.Params.mainSectionTitle | default "Writings" }}</a></span>
-    {{ if (and (and (isset .Site.Params "tagsoverview") (eq .Site.Params.tagsOverview true)) (gt (len .Site.Taxonomies.tags) 0)) }}
+    {{ if (and (and (.Site.Params.tagsoverview) (eq .Site.Params.tagsOverview true)) (gt (len .Site.Taxonomies.tags) 0)) }}
     <span class="h2">Topics</span>
     <span class="widget tagcloud">
       {{ $AllRegularPagesCount := len .Site.RegularPages }}
@@ -32,7 +32,7 @@
     <span class="h2">Most recent</span>
     {{ end }}
     {{ $showAllPostsOnHomePage := false }}
-    {{ if (isset .Site.Params "showallpostsonhomepage") }}
+    {{ if (.Site.Params.showallpostsonhomepage) }}
       {{ $showAllPostsOnHomePage = .Site.Params.ShowAllPostsOnHomePage }}
     {{ end }}
     {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
@@ -52,7 +52,7 @@
     {{ else }}
     <ul class="post-list">
       {{ .Scratch.Set "count" 5 }}
-      {{ if isset .Site.Params "postsonhomepage" }}
+      {{ if .Site.Params.postsonhomepage }}
         {{ .Scratch.Set "count" .Site.Params.postsOnHomePage }}
       {{ end }}
       {{ range (first (.Scratch.Get "count") $mainPosts) }}
@@ -66,14 +66,14 @@
   </section>
 
   {{ $showProjectsList := false }}
-  {{ if (isset .Site.Params "showprojectslist") }}
+  {{ if (.Site.Params.showprojectslist) }}
     {{ $showProjectsList = .Site.Params.showProjectsList }}
   {{ else if .Site.Data.projects }}
     {{ $showProjectsList = true }}
   {{ end }}
   {{ if $showProjectsList }}
     {{ $projectsUrl := "#" }}
-    {{ if isset .Site.Params "projectsurl" }}
+    {{ if .Site.Params.projectsurl }}
       {{ $projectsUrl = .Site.Params.projectsUrl }}
     {{ end }}
   <section id="projects">
