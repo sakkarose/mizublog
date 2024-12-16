@@ -15,7 +15,16 @@
     {{ end }}
     <li class="post-item">
       <div class="meta">
-        <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</time>
+        <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format "Jan-02" }}</time>
+          {{ if .Params.categories }}  
+          <div class="article-category">
+            <i class="fas fa-archive"></i>
+            {{ range $index, $value := .Params.categories }}
+              {{ if gt $index 0 }} {{ print ", " }} {{ end }}
+              <a class="category-link" href="{{ "/categories/" | relLangURL }}{{ $value | urlize }}">{{ $value }}</a>
+            {{ end }}
+          </div>
+          {{ end }}
       </div>
       <span>    
         <a class="" href="{{ .Permalink }}">{{ if .Title }} {{ .Title }} {{ else }} Untitled {{ end }}</a>

@@ -8,14 +8,9 @@
         No tags
       </div>
       {{ end }}
-      <div class="tag-cloud-tags">
-        {{ $AllRegularPagesCount := len .Site.RegularPages }}
-        {{ range $elem := .Data.Terms.Alphabetical }}
-        <a style="font-size: {{ (add 0.8 (mul 15 (div (float $elem.Count) $AllRegularPagesCount))) }}rem;" href="{{ $elem.Page.Permalink }}">
-          {{- .Page.Title -}}
-        </a>
-        {{ end }}
-      </div>
+      {{- range $.Site.Taxonomies.tags.ByCount -}}
+      <a href="{{ .Page.RelPermalink }}">#{{ .Page.Title }} ({{ .Count }})</a>&nbsp;
+  {{- end -}}
     </div>
     {{ else if (eq .Type "categories")}}
       <div id="categories">

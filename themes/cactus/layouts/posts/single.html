@@ -13,6 +13,7 @@
         </h1>
         <div class="meta">
           <div class="postdate">
+            <i class="fas fa-calendar"></i>
             {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
             <time datetime="{{ .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time>
             {{ if and .Site.Params.show_updated (ne .Lastmod .Date) }}
