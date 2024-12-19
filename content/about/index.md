@@ -28,8 +28,8 @@ When I'm not busy with my core responsibilities, you'll find me exploring the wo
 
 ### Work Laptop
 
-![](</images/fetch_w11.png>)
+![](</images/fetch_w11.webp>)
 
 ### Homelab
 
-![](</images//fetch_alpine.png>)
+![](</images//fetch_alpine.webp>)
