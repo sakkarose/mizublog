@@ -5,7 +5,8 @@ draft: true
 categories:
   - technical
   - journal
-  - 
+  - note
+  - article
 tags:
   - Tag1
   - Tag2
@@ -18,9 +19,19 @@ Tips:
 
 Pick the right category:
 1. Note: Straight-forward implementation
-2. Documentation
+2. Documentation: 
+3. Journal
 
-# Heading 1
+Guide cho Journal:
+What were the biggest wins or accomplishments?
+What challenges did I face, and how did I handle them?
+What did I learn about myself?
+What am I most grateful for?
+What were my favorite memories?
+What are the things I want to improve/do differently next month?
+What did I read/watch/listen to that inspired me?
+
+## Heading 2
 
 ### Heading 3
 

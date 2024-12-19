@@ -43,6 +43,9 @@ weight = 4
     noClasses = true
     style = "dracula"
     tabWidth = 4
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params]
 
@@ -76,7 +79,7 @@ weight = 4
   # Post page settings
   show_updated = true # default
   showReadTime = true # default
-    
+
 [security]
   [security.funcs]
     getenv = ['^HUGO_', '^CI$']
