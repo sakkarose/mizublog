@@ -32,4 +32,4 @@ When I'm not busy with my core responsibilities, you'll find me exploring the wo
 
 ### Homelab
 
-![](</images//fetch_alpine.webp>)
+![](</images/fetch_alpine.webp>)

@@ -55,6 +55,6 @@ This is some text with a footnote.[^1]
 | Row 1, Cell 1 | Row 1, Cell 2 | Row 1, Cell 3 |
 | Row 2, Cell 1 | Row 2, Cell 2 | Row 2, Cell 3 |
 
-![my alt text](/img/my-image.webp)
+![my alt text](/images/my-image.webp)
 
 
