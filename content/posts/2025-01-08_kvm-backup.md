@@ -13,11 +13,13 @@ keywords:
   - libvirt
   - virtnbdbackup
 ---
-Broadcom's acquisition of VMware has led to significant increases in licensing costs, making it difficult for small and medium-sized businesses (SMBs) to keep up. As a result, many are turning to open-source alternatives like libvirt KVM and Proxmox. Proxmox offers built-in backup solutions, and in this blog post, we'll dive deep into KVM backup using virtnbdbackup.
+Broadcom's acquisition of VMware has led to significant increases in licensing costs, making it difficult for small and medium-sized businesses (SMBs) to keep up. As a result, many are turning to open-source alternatives like libvirt KVM and Proxmox. Since Proxmox offers built-in backup solutions, and in this blog post, we'll dive deep into KVM backup using virtnbdbackup.
 
 ## Overview
 
 We'll be using `virtnbdbackup` version 2.18 on a KVM host running `Ubuntu Server 22.04`.
+
+The full script can be found at [my github](https://github.com/sakkarose/oddly_specific_scripts/blob/main/virtnbdbackup-alldomain.sh). In case of any updates and improvements, I will update this post too.
 
 Here is the workflow for the latest script:
 1. Prepare by creating a backup directory and initializing variables.
@@ -72,8 +74,6 @@ For Windows systems:
 3. On the VM, navigate to the mounted ISO and execute `virtio-win-gt-x64`.
 
 ## Writing the backup script
-
-The full script can be found at [my github](https://github.com/sakkarose/oddly_specific_scripts/blob/main/virtnbdbackup-alldomain.sh). In case of any updates and improvements, I will update this post too.
 
 ### Configuration variables
 
