@@ -1,7 +1,7 @@
 {{ if (isset .Site.Params "favicon") }}
   {{ .Scratch.Set "favicon_path" .Site.Params.favicon }}
 {{ else }}
-  {{ .Scratch.Set "favicon_path" "images/favicon.ico" }}
+  {{ .Scratch.Set "favicon_path" "images/badapple.ico" }}
 {{ end }}
 
 {{ $favicon_path := .Scratch.Get "favicon_path" }}
