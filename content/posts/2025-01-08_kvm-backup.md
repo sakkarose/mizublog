@@ -1,5 +1,5 @@
 ---
-title: "KVM Backup with virtnbdbackup"
+title: "KVM backup with virtnbdbackup"
 date: 2025-01-08T19:00:00+07:00
 draft: false
 categories:
