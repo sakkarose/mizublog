@@ -19,7 +19,7 @@ Tips:
 
 Pick the right category:
 1. Note: Straight-forward implementation
-2. Documentation: 
+2. Article: 
 3. Journal
 
 Guide cho Journal:
