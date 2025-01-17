@@ -52,7 +52,7 @@ weight = 4
   # \themes\cactus\assets\scss\colors
   colortheme = "latte"
 
-  favicon = "favicon.ico"
+  favicon = "/images/favicon.ico"
   
   description = """
   i'm a security engineer and technical consultant, with a strong interest for cybersecurity and compliance.\n
