@@ -34,3 +34,5 @@ Here comes a checklist for pwnagotchi hardware.
 8. Misc (Cables, HATs)
 
 Example builds (I have tried)
+
+https://github.com/Pwnagotchi-Unofficial/community-wiki/wiki
