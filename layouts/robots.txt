@@ -1,2 +1,9 @@
-User-agent: *
-Disallow:
+User-agent: Googlebot
+Allow: /posts/
+Disallow: /posts/journal/
+Disallow: /files/
+Disallow: /attachments/
+Disallow: /uploads/
+Disallow: /assets/downloads/
+
+Sitemap: https://mizu.reisen/sitemap.xml
