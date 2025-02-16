@@ -6,4 +6,22 @@ Disallow: /attachments/
 Disallow: /uploads/
 Disallow: /assets/downloads/
 
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /*.xls$
+Disallow: /*.xlsx$
+Disallow: /*.zip$
+Disallow: /*.rar$
+Disallow: /*.7z$
+Disallow: /*.tar$
+Disallow: /*.gz$
+Disallow: /*.exe$
+Disallow: /*.dll$
+Disallow: /*.iso$
+
+Disallow: /*.pdf$
+Disallow: /*.webp$
+Disallow: /*.ico$
+Disallow: /*.png$
+
 Sitemap: https://mizu.reisen/sitemap.xml
