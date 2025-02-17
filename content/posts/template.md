@@ -3,7 +3,7 @@ title: "Title of Your Blog Post"
 date: 2000-10-30T12:00:00+07:00
 draft: true
 categories:
-  - technical
+  - project
   - journal
   - note
   - article
@@ -18,11 +18,12 @@ Tips:
 1. Không dùng H1
 
 Pick the right category:
-1. Note: Straight-forward implementation
+1. Note: Straight-forward implementation, a collection of ideas, tips, or reminders.
 2. Article: 
-3. Journal
+3. Journal: A personal record of experiences, thoughts, and reflections.
+4. Project: Clear, factual information and instructions.
 
-Guide cho Journal:
+Guide for Journal:
 What were the biggest wins or accomplishments?
 What challenges did I face, and how did I handle them?
 What did I learn about myself?

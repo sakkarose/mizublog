@@ -1,10 +1,9 @@
 ---
-title: "my pwnagotchi guide"
+title: "My Pwnagotchi Guide"
 date: 2024-12-10T19:00:00+07:00
 draft: true
-tableOfContents: true
 categories:
-  - documentation
+  - project
 tags:
   - pwnagotchi
 keywords:
