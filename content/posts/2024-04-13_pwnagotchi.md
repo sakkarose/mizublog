@@ -1,6 +1,6 @@
 ---
 title: "My Pwnagotchi Guide"
-date: 2024-12-10T19:00:00+07:00
+date: 2024-04-13T19:00:00+07:00
 draft: true
 categories:
   - project
