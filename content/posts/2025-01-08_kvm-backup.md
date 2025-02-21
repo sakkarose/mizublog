@@ -235,8 +235,8 @@ In the next blog post, we'll explore KVM native backup scripting.
 
 ## Resources
 
-https://github.com/abbbi/virtnbdbackup
+* [Github repository for virtnbdbackup](https://github.com/abbbi/virtnbdbackup)
 
-https://rclone.org/sftp/
+* [Rclone - SFTP remote](https://rclone.org/sftp/)
 
-https://rclone.org/commands/rclone_sync/
+* [Rclone - Sync command](https://rclone.org/commands/rclone_sync/
