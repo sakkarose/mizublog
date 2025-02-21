@@ -14,6 +14,7 @@
   </section>
 
   <section id="misc">
+    <span class="h1">{{ .Site.Params.mainSectionTitle | default "Miscellaneous" }}</span>
   {{ partial "lastfm-recent-tracks.html" . }}
   {{ partial "tryhackme-badge.html" . }}
 <!--  {{ partial "hackthebox-badge.html" . }} -->
