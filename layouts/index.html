@@ -13,13 +13,6 @@
     </span>
   </section>
 
-  <section id="misc">
-    <span class="h1">{{ .Site.Params.mainSectionTitle | default "Miscellaneous" }}</span>
-  {{ partial "lastfm-recent-tracks.html" . }}
-  {{ partial "tryhackme-badge.html" . }}
-<!--  {{ partial "hackthebox-badge.html" . }} -->
-  </section>
-
   <section id="writing">
     <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">{{ .Site.Params.mainSectionTitle | default "Writings" }}</a></span>
     {{ if (and (and (.Site.Params.tagsoverview) (eq .Site.Params.tagsOverview true)) (gt (len .Site.Taxonomies.tags) 0)) }}
@@ -66,6 +59,13 @@
       {{ end }}
     </ul>
     {{ end }}
+  </section>
+
+  <section id="misc">
+    <span class="h1">{{ .Site.Params.mainSectionTitle | default "Miscellaneous" }}</span>
+  {{ partial "lastfm-recent-tracks.html" . }}
+  {{ partial "tryhackme-badge.html" . }}
+<!--  {{ partial "hackthebox-badge.html" . }} -->
   </section>
 
   {{ $showProjectsList := false }}
