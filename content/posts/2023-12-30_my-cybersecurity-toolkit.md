@@ -1,6 +1,8 @@
 ---
 title: "My cybersecurity toolkit"
 date: 2023-12-30T19:45:00+07:00
+lastmod: 2024-02-22T19:45:00+07:00
+showLastmod: true
 draft: false
 categories:
   - note
@@ -31,17 +33,17 @@ Identifying weaknesses in systems, networks, and applications.
 #### **Penetration Testing**
 Simulating real-world attacks to exploit vulnerabilities and gain unauthorized access.
 
-#### **Social Engineering** 
+#### **Social Engineering** 
 Manipulating individuals into divulging sensitive information or performing actions that compromise security.
 
-#### **Wireless Security Testing** 
+#### **Wireless Security Testing** 
 Assessing the security of wireless networks.
 
-#### **Web Application Security** 
+#### **Web Application Security** 
 Specifically focusing on vulnerabilities in web applications.
 * [`gobuster`](https://github.com/OJ/gobuster): Directory and file brute-forcing tool.
 
-#### **Network Security Testing** 
+#### **Network Security Testing** 
 Evaluating the security of network infrastructure.
 * [`Nmap`](https://nmap.org/): Powerful and versatile network scanner.
 
@@ -58,76 +60,76 @@ Creating and customizing payloads for penetration testing and exploit developmen
 Attempting to recover passwords by trying various combinations of characters.
 * [`Hydra`](https://github.com/vanhauser-thc/thc-hydra): Password cracking tool supporting various services.
 
-#### **Physical Security Testing** 
+#### **Physical Security Testing** 
 Assessing the security of physical access controls and infrastructure.
 
-#### **Red Teaming Exercises/Simulated Attacks** 
+#### **Red Teaming Exercises/Simulated Attacks** 
 Conducting full-scale simulations to test an organization's defenses.*
 
-#### **Post-Exploitation** 
+#### **Post-Exploitation** 
 Simulating actions an attacker might take after gaining access (e.g., data exfiltration, privilege escalation, persistence).
 
-#### **Bypass Detection** 
+#### **Bypass Detection** 
 Developing and testing techniques to evade security defenses.
 
 ### Blue Team (Defensive)
 
-#### **Security Monitoring and Threat Detection** 
+#### **Security Monitoring and Threat Detection** 
 Continuously monitoring systems and networks for suspicious activity.
 * [`Wazuh`](https://wazuh.com/): Open-source SIEM and EDR system.
 * [`Sysmon`](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon): Windows system service that logs detailed system events.
 
-#### **Incident Response** 
+#### **Incident Response** 
 Responding to security incidents to contain them, mitigate damage, and restore systems.
 * [`Velociraptor`](https://github.com/Velocidex/velociraptor): Advanced endpoint monitoring, digital forensics, and incident response tool.
 
-#### **Vulnerability Management** 
+#### **Vulnerability Management** 
 Identifying and remediating vulnerabilities.
 * [`Nessus (Tenable)`](https://www.tenable.com/products/nessus): Vulnerability scanner.
 
-#### **Security Hardening** 
+#### **Security Hardening** 
 Implementing security controls to reduce the attack surface.
 
-#### **Threat Intelligence** 
+#### **Threat Intelligence** 
 Gathering and analyzing information about potential threats.
-* [`Ransomware-Tool-Matrix`](https://github.com/BushidoUK/Ransomware-Tool-Matrix):  A curated list of tools used by different ransomware and extortionist groups.
+* [`Ransomware-Tool-Matrix`](https://github.com/BushidoUK/Ransomware-Tool-Matrix):  A curated list of tools used by different ransomware and extortionist groups.
 * [`maltrail`](https://github.com/stamparm/maltrail): A malicious traffic detection system that uses public and custom blacklists to identify threats.
 
-#### **Security Awareness Training** 
+#### **Security Awareness Training** 
 Educating employees about security best practices.
 
-#### **Log Management and Analysis** 
+#### **Log Management and Analysis** 
 Collecting and analyzing security logs.
 
-#### **Security Auditing** 
+#### **Security Auditing** 
 Assessing security controls and configurations.
 
-#### **Endpoint Security** 
+#### **Endpoint Security** 
 Protecting endpoint devices.
 * [`ClamAV`](https://www.clamav.net/): Open-source antivirus engine.
 
-#### **Network Security** 
+#### **Network Security** 
 Protecting network infrastructure.
 * [`maltrail`](https://github.com/stamparm/maltrail): A malicious traffic detection system that uses public and custom blacklists to identify threats.
 
 #### **Intrusion Detection and Prevention**
 Monitoring systems and networks for malicious activity and taking action to block or mitigate threats.
-* [`CrowdSec`](https://crowdsec.net/):  Open-source collaborative intrusion detection and prevention system.
+* [`CrowdSec`](https://crowdsec.net/):  Open-source collaborative intrusion detection and prevention system.
 
 #### **Web Application Security**
 Protecting web applications from various attacks and vulnerabilities.
 * [`BunkerWeb`](https://github.com/bunkerity/bunkerweb): Open-source self-hosted & cloud web application firewall.
-* [`SafeLine`](https://github.com/chaitin/SafeLine):  Open-source self-hosted web application firewall.
+* [`SafeLine`](https://github.com/chaitin/SafeLine):  Open-source self-hosted web application firewall.
 
 #### **Email Security**
 Tools and resources related to securing email communication and preventing email-based attacks.
-* [`DMARC-SPF-Checker`](https://github.com/fdzdev/DMARC-SPF-Checker):  A tool to check the DMARC and SPF records of a domain.
+* [`DMARC-SPF-Checker`](https://github.com/fdzdev/DMARC-SPF-Checker):  A tool to check the DMARC and SPF records of a domain.
 * [`MX Toolbox`](https://mxtoolbox.com/): Website providing diagnostic tools for email servers.
 
-#### **Data Security** 
+#### **Data Security** 
 Protecting sensitive data.
 
-#### **Identity and Access Management (IAM)** 
+#### **Identity and Access Management (IAM)** 
 Managing user identities and access privileges.
 
 #### **Endpoint Visibility**
@@ -142,55 +144,55 @@ Managing and controlling access to privileged accounts and sensitive systems.
 Assessing and improving the security posture of cloud environments.
 * [`Push Security`](https://pushsecurity.com): Cloud security posture management tool.
 
-#### **Security Architecture and Design** 
+#### **Security Architecture and Design** 
 Designing and implementing secure systems.
 
-#### **Policy and Compliance** 
+#### **Policy and Compliance** 
 Developing and enforcing security policies.
 
 #### **Malware Analysis**
 Analyzing malware samples to understand their functionality, identify their characteristics, and develop detection methods.
-* [`YARA`](https://virustotal.github.io/yara/):  Tool for identifying and classifying malware based on rules.
+* [`YARA`](https://virustotal.github.io/yara/):  Tool for identifying and classifying malware based on rules.
 * [`VirusTotal`](https://www.virustotal.com/): Website for analyzing files and URLs for malware.
 
 ### Other Security Functions
 
-#### **DevSecOps (Development Security Operations)** 
+#### **DevSecOps (Development Security Operations)** 
 Integrating security into the software development lifecycle (SDLC).
 
-#### **GRC (Governance, Risk, and Compliance)** 
+#### **GRC (Governance, Risk, and Compliance)** 
 Managing security risk and ensuring compliance.
-* [`Eramba`](https://github.com/eramba): Open-source GRC platform.  
+* [`Eramba`](https://github.com/eramba): Open-source GRC platform.   
 
-#### **Security Engineering/Architecture** 
+#### **Security Engineering/Architecture** 
 Designing, building, and maintaining secure systems. *(Broader, encompassing both proactive and reactive aspects.)*
 
-#### **Digital Forensics and Incident Response (DFIR)** 
+#### **Digital Forensics and Incident Response (DFIR)** 
 Investigating security incidents and gathering evidence.
-* [`Chainsaw`](https://github.com/WithSecureLabs/chainsaw):  Memory forensics tool for incident response and malware analysis.
+* [`Chainsaw`](https://github.com/WithSecureLabs/chainsaw):  Memory forensics tool for incident response and malware analysis.
 * [`FTK Imager`](https://accessdata.com/products-services/forensic-toolkit-ftk-imager): Tool for creating forensic images of disks and other media.
-* [`gkape`](https://ericzimmerman.github.io/KapeDocs/#!Pages\5.-gkape.md):  Open-source incident response and forensics tool for memory and disk analysis.
+* [`gkape`](https://ericzimmerman.github.io/KapeDocs/#!Pages\5.-gkape.md):  Open-source incident response and forensics tool for memory and disk analysis.
 * [`WinPmem`](https://github.com/Velocidex/WinPmem): Library for accessing physical memory in Windows, used for memory analysis and forensics.
-* [`Volatility 3`](https://github.com/volatilityfoundation/volatility3):  Open-source memory forensics framework for extracting and analyzing information from volatile memory (RAM).
-* [`LiME`](https://github.com/504ensicsLabs/LiME):  Loadable Kernel Module (LKM) that captures the contents of volatile memory (RAM) for later analysis.
+* [`Volatility 3`](https://github.com/volatilityfoundation/volatility3):  Open-source memory forensics framework for extracting and analyzing information from volatile memory (RAM).
+* [`LiME`](https://github.com/504ensicsLabs/LiME):  Loadable Kernel Module (LKM) that captures the contents of volatile memory (RAM) for later analysis.
 
-#### **Threat Intelligence Analysis** 
+#### **Threat Intelligence Analysis** 
 Collecting, analyzing, and disseminating threat information. *(Distinct from Blue Team's which is often performed by dedicated analysts.)*
 
-#### **Security Operations Center (SOC) Operations** 
+#### **Security Operations Center (SOC) Operations** 
 The day-to-day running of the SOC, including monitoring, incident response, and threat hunting.
 
-#### **Vulnerability Research** 
+#### **Vulnerability Research** 
 Discovering new vulnerabilities.
 
-#### **Security Management** 
+#### **Security Management** 
 Overseeing all aspects of an organization's security program. *(This is a *management* function, not a technical one.)*
 
 #### **OSINT (Open Source Intelligence)**
 Gathering and analyzing publicly available information to gain insights about targets, threats, or vulnerabilities.
-* [`OSINT Framework`](https://osintframework.com/): A comprehensive collection of OSINT tools and techniques.  *(This is a resource, not a tool, but we include it here since it is a major OSINT resource)*
+* [`OSINT Framework`](https://osintframework.com/): A comprehensive collection of OSINT tools and techniques.
 * [`Have I Been Pwned`](https://haveibeenpwned.com/): A website that allows users to check if their personal data has been compromised in data breaches.
-* [`onion-lookup`](https://github.com/ail-project/onion-lookup): Software for checking the existence of Tor hidden services and retrieving their metadata. 
+* [`onion-lookup`](https://github.com/ail-project/onion-lookup): Software for checking the existence of Tor hidden services and retrieving their metadata. 
 * [`DomainTools`](https://www.domaintools.com/): Website providing information about domain names and IP addresses.
 * [`URLScan.io`](https://urlscan.io/): Website for scanning and analyzing URLs.
 

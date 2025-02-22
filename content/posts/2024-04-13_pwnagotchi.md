@@ -2,6 +2,8 @@
 title: "My Pwnagotchi Guide"
 date: 2024-04-13T19:00:00+07:00
 draft: true
+lastmod: 
+showLastmod: 
 categories:
   - project
 tags:

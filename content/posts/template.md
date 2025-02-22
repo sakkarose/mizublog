@@ -2,6 +2,8 @@
 title: "Title of Your Blog Post"
 date: 2000-10-30T12:00:00+07:00
 draft: true
+lastmod: 
+showLastmod: true
 categories:
   - project
   - journal
