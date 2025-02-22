@@ -62,7 +62,7 @@ Attempting to recover passwords by trying various combinations of characters.
 Assessing the security of physical access controls and infrastructure.
 
 #### **Red Teaming Exercises/Simulated Attacks** 
-Conducting full-scale simulations to test an organization's defenses.  *(This is an activity, not a tool category itself.  Tools used here are drawn from the other Red Team categories.)*
+Conducting full-scale simulations to test an organization's defenses.*
 
 #### **Post-Exploitation** 
 Simulating actions an attacker might take after gaining access (e.g., data exfiltration, privilege escalation, persistence).
@@ -108,7 +108,7 @@ Protecting endpoint devices.
 
 #### **Network Security** 
 Protecting network infrastructure.
- * [`maltrail`](https://github.com/stamparm/maltrail): A malicious traffic detection system that uses public and custom blacklists to identify threats.
+* [`maltrail`](https://github.com/stamparm/maltrail): A malicious traffic detection system that uses public and custom blacklists to identify threats.
 
 #### **Intrusion Detection and Prevention**
 Monitoring systems and networks for malicious activity and taking action to block or mitigate threats.
@@ -163,7 +163,7 @@ Managing security risk and ensuring compliance.
 * [`Eramba`](https://github.com/eramba): Open-source GRC platform.  
 
 #### **Security Engineering/Architecture** 
-Designing, building, and maintaining secure systems. *(Similar to Blue Team's "Security Architecture and Design," but broader, encompassing both proactive and reactive aspects.)*
+Designing, building, and maintaining secure systems. *(Broader, encompassing both proactive and reactive aspects.)*
 
 #### **Digital Forensics and Incident Response (DFIR)** 
 Investigating security incidents and gathering evidence.
@@ -175,13 +175,13 @@ Investigating security incidents and gathering evidence.
 * [`LiME`](https://github.com/504ensicsLabs/LiME):  Loadable Kernel Module (LKM) that captures the contents of volatile memory (RAM) for later analysis.
 
 #### **Threat Intelligence Analysis** 
-Collecting, analyzing, and disseminating threat information. *(Distinct from Blue Team's "Threat Intelligence" in that this is a specialized function, often performed by dedicated analysts.)*
+Collecting, analyzing, and disseminating threat information. *(Distinct from Blue Team's which is often performed by dedicated analysts.)*
 
 #### **Security Operations Center (SOC) Operations** 
-The day-to-day running of the SOC, including monitoring, incident response, and threat hunting. *(This is an *operational function* that uses tools from many categories.)*
+The day-to-day running of the SOC, including monitoring, incident response, and threat hunting.
 
 #### **Vulnerability Research** 
-Discovering new vulnerabilities.  *(This can support both Red and Blue teams.)*
+Discovering new vulnerabilities.
 
 #### **Security Management** 
 Overseeing all aspects of an organization's security program. *(This is a *management* function, not a technical one.)*
@@ -200,28 +200,34 @@ Versatile tools for manipulating and analyzing data in various security contexts
 
 ### Windows System Utilities
 
-* `sc.exe`: Service Control utility.  Used for managing Windows services (starting, stopping, configuring).
-    * **Red Team Uses:** Creating or modifying services for persistence, privilege escalation, or lateral movement.  Disabling services to disrupt defenses.
-    * **Blue Team Uses:**  Auditing service configurations, hardening service permissions, troubleshooting service-related issues, stopping malicious services during incident response.
-* `reg`: Registry Editor. Used for viewing and modifying the Windows Registry.
-    * **Red Team Uses:**  Modifying registry keys for persistence, information gathering, bypassing security controls, or executing payloads.
-    * **Blue Team Uses:**  Auditing registry settings for security vulnerabilities, implementing security hardening configurations, investigating malware activity, analyzing system configurations.
-* `ping`:  Basic network connectivity testing.  Checks if a host is reachable.
-    * **Red Team Uses:**  Reconnaissance (checking if hosts are up), network mapping.
-    * **Blue Team Uses:** Troubleshooting network connectivity issues, verifying network configurations.
-* `traceroute`:  Traces the route packets take to reach a destination.  Helps identify network hops and potential bottlenecks.
-    * **Red Team Uses:** Network mapping, identifying network infrastructure.
-    * **Blue Team Uses:** Troubleshooting network latency issues, analyzing network paths.
-* `dig`: Domain Information Groper.  Used for DNS lookups.  Retrieves DNS records for a domain.
-    * **Red Team Uses:**  Reconnaissance (gathering information about a target's DNS records, identifying subdomains).
-    * **Blue Team Uses:**  Troubleshooting DNS resolution issues, verifying DNS configurations.
+* `sc.exe` - Service Control utility for managing Windows services
+  * **Red Team Uses:** Creating or modifying services for persistence, privilege escalation, or lateral movement. Disabling services to disrupt defenses.
+  * **Blue Team Uses:** Auditing service configurations, hardening service permissions, troubleshooting service-related issues, stopping malicious services during incident response.
+
+* `reg` - Registry Editor for viewing and modifying the Windows Registry
+  * **Red Team Uses:** Modifying registry keys for persistence, information gathering, bypassing security controls, or executing payloads.
+  * **Blue Team Uses:** Auditing registry settings for security vulnerabilities, implementing security hardening configurations, investigating malware activity, analyzing system configurations.
+
+* `ping` - Basic network connectivity testing
+  * **Red Team Uses:** Reconnaissance (checking if hosts are up), network mapping.
+  * **Blue Team Uses:** Troubleshooting network connectivity issues, verifying network configurations.
+
+* `traceroute` - Traces the route packets take to reach a destination
+  * **Red Team Uses:** Network mapping, identifying network infrastructure.
+  * **Blue Team Uses:** Troubleshooting network latency issues, analyzing network paths.
+
+* `dig` - Domain Information Groper for DNS lookups
+  * **Red Team Uses:** Reconnaissance (gathering information about a target's DNS records, identifying subdomains).
+  * **Blue Team Uses:** Troubleshooting DNS resolution issues, verifying DNS configurations.
 
 ### Sysinternals
 
-This is a suite of powerful tools for managing, troubleshooting, and monitoring Windows systems.  Many are useful for both Red and Blue Teams.
-* [`TCPView`](https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview):  A Windows program that displays detailed listings of all TCP and UDP endpoints on your system, including the process that owns each endpoint.
-    * **Red Team Uses:** Identifying open ports and services, understanding network connections established by applications, finding potential attack vectors.
-    * **Blue Team Uses:** Troubleshooting network connectivity issues, identifying malicious network connections, monitoring network activity, investigating malware communication.
-* [`Process Explorer`](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer): Advanced process monitoring tool.  Displays information about running processes, including their parent processes, handles, and DLLs.
-    * **Red Team Uses:** Analyzing running processes, identifying potential targets for attack, understanding process relationships, finding vulnerabilities in running applications.
-    * **Blue Team Uses:** Troubleshooting performance issues, identifying malicious processes, investigating malware activity, analyzing system behavior.
+A suite of powerful tools for managing, troubleshooting, and monitoring Windows systems.
+
+* [`TCPView`](https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview) - Displays detailed listings of TCP and UDP endpoints
+  * **Red Team Uses:** Identifying open ports and services, understanding network connections established by applications, finding potential attack vectors.
+  * **Blue Team Uses:** Troubleshooting network connectivity issues, identifying malicious network connections, monitoring network activity, investigating malware communication.
+
+* [`Process Explorer`](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer) - Advanced process monitoring tool
+  * **Red Team Uses:** Analyzing running processes, identifying potential targets for attack, understanding process relationships, finding vulnerabilities in running applications.
+  * **Blue Team Uses:** Troubleshooting performance issues, identifying malicious processes, investigating malware activity, analyzing system behavior.
