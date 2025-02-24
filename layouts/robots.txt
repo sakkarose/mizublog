@@ -1,6 +1,4 @@
 User-agent: Googlebot
-Allow: /posts/
-Disallow: /posts/journal/
 Disallow: /files/
 Disallow: /attachments/
 Disallow: /uploads/

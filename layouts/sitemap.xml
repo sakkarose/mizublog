@@ -1,11 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+{{ printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {{ range .Pages }}
+  {{ range .Data.Pages }}
+  {{- if not .Draft -}}
   <url>
-    <loc>{{ .Permalink }}</loc>
-    <lastmod>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}</lastmod>
+    <loc>{{ .Permalink }}</loc>{{ if not .Lastmod.IsZero }}
+    <lastmod>{{ safeHTML ( .Lastmod.Format "2006-01-02T15:04:05-07:00" ) }}</lastmod>{{ else }}
+    <lastmod>{{ safeHTML ( .Date.Format "2006-01-02T15:04:05-07:00" ) }}</lastmod>{{ end }}
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  {{- end -}}
   {{ end }}
 </urlset>
