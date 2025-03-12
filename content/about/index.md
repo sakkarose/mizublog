@@ -18,9 +18,9 @@ When I'm not busy with my core responsibilities, you'll find me exploring the wo
 
 # My CVs
 
-[Summary CV - Last updated: Nov 2024](</attachments/Summary CV - Nov24.pdf>)
+[Experience Summary - Last updated: November 2024](</attachments/Summary CV - Nov24.pdf>)
 
-🚧 ****I only have the summary one for now, I'm working on making specific field CVs.****
+[Security Engineer - Last updated: March 2025](</attachments/Security CV - Mar25.pdf>)
 
 ---
 
