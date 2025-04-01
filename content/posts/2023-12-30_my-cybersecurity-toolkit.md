@@ -1,7 +1,7 @@
 ---
 title: "My cybersecurity toolkit"
 date: 2023-12-30T19:45:00+07:00
-lastmod: 2025-02-22T19:45:00+07:00
+lastmod: 2025-04-01T19:45:00+07:00
 showLastmod: true
 draft: false
 categories:
@@ -52,9 +52,10 @@ Evaluating the security of network infrastructure.
 * [`hunter.io`](https://hunter.io/): Email address finding service.
 * [`Enum4Linux`](https://github.com/CiscoCX/enum4linux): Tool for enumerating information from Windows and Samba systems.
 
-#### **Exploit Development**
+#### **Exploit**
 Creating and customizing payloads for penetration testing and exploit development.
 * [`msfvenom`](https://www.metasploit.com/): Command-line payload generator for the Metasploit Framework.
+* [`PowerShell for Hackers`](https://github.com/I-Am-Jakoby/PowerShell-for-Hackers): Providing PowerShell payloads for various offensive purposes.
 
 #### **Password Cracking**
 Attempting to recover passwords by trying various combinations of characters.
