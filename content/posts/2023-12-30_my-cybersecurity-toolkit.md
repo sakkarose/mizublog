@@ -1,7 +1,7 @@
 ---
 title: "My cybersecurity toolkit"
 date: 2023-12-30T19:45:00+07:00
-lastmod: 2025-04-01T19:45:00+07:00
+lastmod: 2025-04-02T19:45:00+07:00
 showLastmod: true
 draft: false
 categories:
@@ -27,18 +27,6 @@ This will be updated over time as I find new resources and tools.
 
 ### Red Team (Offensive)
 
-#### **Vulnerability Discovery**
-Identifying weaknesses in systems, networks, and applications.
-
-#### **Penetration Testing**
-Simulating real-world attacks to exploit vulnerabilities and gain unauthorized access.
-
-#### **Social Engineering** 
-Manipulating individuals into divulging sensitive information or performing actions that compromise security.
-
-#### **Wireless Security Testing** 
-Assessing the security of wireless networks.
-
 #### **Web Application Security** 
 Specifically focusing on vulnerabilities in web applications.
 * [`gobuster`](https://github.com/OJ/gobuster): Directory and file brute-forcing tool.
@@ -48,9 +36,11 @@ Evaluating the security of network infrastructure.
 * [`Nmap`](https://nmap.org/): Powerful and versatile network scanner.
 
 #### **Reconnaissance/Information Gathering**
+Gathering information about the target system or network.
 * [`theHarvester`](https://github.com/laramies/theHarvester): Email and username gathering tool.
 * [`hunter.io`](https://hunter.io/): Email address finding service.
 * [`Enum4Linux`](https://github.com/CiscoCX/enum4linux): Tool for enumerating information from Windows and Samba systems.
+* [`CF-Hero`](https://github.com/musana/CF-Hero): Tool to discover the real IP addresses of web applications protected by Cloudflare.
 
 #### **Exploit**
 Creating and customizing payloads for penetration testing and exploit development.
@@ -61,17 +51,9 @@ Creating and customizing payloads for penetration testing and exploit developmen
 Attempting to recover passwords by trying various combinations of characters.
 * [`Hydra`](https://github.com/vanhauser-thc/thc-hydra): Password cracking tool supporting various services.
 
-#### **Physical Security Testing** 
-Assessing the security of physical access controls and infrastructure.
-
-#### **Red Teaming Exercises/Simulated Attacks** 
-Conducting full-scale simulations to test an organization's defenses.*
-
-#### **Post-Exploitation** 
-Simulating actions an attacker might take after gaining access (e.g., data exfiltration, privilege escalation, persistence).
-
-#### **Bypass Detection** 
-Developing and testing techniques to evade security defenses.
+#### **Cloud Security Testing**
+Simulating attacks and validating security controls in cloud environments.
+* [`Halberd`](https://github.com/vectra-ai-research/Halberd): Advanced security testing platform for validating cloud security controls through attack emulation.
 
 ### Blue Team (Defensive)
 
@@ -97,15 +79,6 @@ Gathering and analyzing information about potential threats.
 * [`Ransomware-Tool-Matrix`](https://github.com/BushidoUK/Ransomware-Tool-Matrix):  A curated list of tools used by different ransomware and extortionist groups.
 * [`maltrail`](https://github.com/stamparm/maltrail): A malicious traffic detection system that uses public and custom blacklists to identify threats.
 
-#### **Security Awareness Training** 
-Educating employees about security best practices.
-
-#### **Log Management and Analysis** 
-Collecting and analyzing security logs.
-
-#### **Security Auditing** 
-Assessing security controls and configurations.
-
 #### **Endpoint Security** 
 Protecting endpoint devices.
 * [`ClamAV`](https://www.clamav.net/): Open-source antivirus engine.
@@ -128,12 +101,6 @@ Tools and resources related to securing email communication and preventing email
 * [`DMARC-SPF-Checker`](https://github.com/fdzdev/DMARC-SPF-Checker):  A tool to check the DMARC and SPF records of a domain.
 * [`MX Toolbox`](https://mxtoolbox.com/): Website providing diagnostic tools for email servers.
 
-#### **Data Security** 
-Protecting sensitive data.
-
-#### **Identity and Access Management (IAM)** 
-Managing user identities and access privileges.
-
 #### **Endpoint Visibility**
 Collecting and analyzing system data to detect suspicious activity, ensure compliance, and improve security posture. This includes tools for querying system state, logging events, and auditing configurations.
 * [`osquery`](https://osquery.io/): Tool for querying system information using SQL.
@@ -146,12 +113,6 @@ Managing and controlling access to privileged accounts and sensitive systems.
 Assessing and improving the security posture of cloud environments.
 * [`Push Security`](https://pushsecurity.com): Cloud security posture management tool.
 
-#### **Security Architecture and Design** 
-Designing and implementing secure systems.
-
-#### **Policy and Compliance** 
-Developing and enforcing security policies.
-
 #### **Malware Analysis**
 Analyzing malware samples to understand their functionality, identify their characteristics, and develop detection methods.
 * [`YARA`](https://virustotal.github.io/yara/):  Tool for identifying and classifying malware based on rules.
@@ -160,15 +121,9 @@ Analyzing malware samples to understand their functionality, identify their char
 
 ### Other Security Functions
 
-#### **DevSecOps (Development Security Operations)** 
-Integrating security into the software development lifecycle (SDLC).
-
 #### **GRC (Governance, Risk, and Compliance)** 
 Managing security risk and ensuring compliance.
 * [`Eramba`](https://github.com/eramba): Open-source GRC platform.   
-
-#### **Security Engineering/Architecture** 
-Designing, building, and maintaining secure systems. *(Broader, encompassing both proactive and reactive aspects.)*
 
 #### **Digital Forensics and Incident Response (DFIR)** 
 Investigating security incidents and gathering evidence.
@@ -178,18 +133,6 @@ Investigating security incidents and gathering evidence.
 * [`WinPmem`](https://github.com/Velocidex/WinPmem): Library for accessing physical memory in Windows, used for memory analysis and forensics.
 * [`Volatility 3`](https://github.com/volatilityfoundation/volatility3):  Open-source memory forensics framework for extracting and analyzing information from volatile memory (RAM).
 * [`LiME`](https://github.com/504ensicsLabs/LiME):  Loadable Kernel Module (LKM) that captures the contents of volatile memory (RAM) for later analysis.
-
-#### **Threat Intelligence Analysis** 
-Collecting, analyzing, and disseminating threat information. *(Distinct from Blue Team's which is often performed by dedicated analysts.)*
-
-#### **Security Operations Center (SOC) Operations** 
-The day-to-day running of the SOC, including monitoring, incident response, and threat hunting.
-
-#### **Vulnerability Research** 
-Discovering new vulnerabilities.
-
-#### **Security Management** 
-Overseeing all aspects of an organization's security program. *(This is a *management* function, not a technical one.)*
 
 #### **OSINT (Open Source Intelligence)**
 Gathering and analyzing publicly available information to gain insights about targets, threats, or vulnerabilities.
