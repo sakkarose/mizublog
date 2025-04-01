@@ -92,6 +92,7 @@ Implementing security controls to reduce the attack surface.
 
 #### **Threat Intelligence** 
 Gathering and analyzing information about potential threats.
+* [`Sophos Intelix`](https://intelix.sophos.com/): Threat intelligence platform for analyzing files and URLs.
 * [`Ransomware-Tool-Matrix`](https://github.com/BushidoUK/Ransomware-Tool-Matrix):  A curated list of tools used by different ransomware and extortionist groups.
 * [`maltrail`](https://github.com/stamparm/maltrail): A malicious traffic detection system that uses public and custom blacklists to identify threats.
 
@@ -154,6 +155,7 @@ Developing and enforcing security policies.
 Analyzing malware samples to understand their functionality, identify their characteristics, and develop detection methods.
 * [`YARA`](https://virustotal.github.io/yara/):  Tool for identifying and classifying malware based on rules.
 * [`VirusTotal`](https://www.virustotal.com/): Website for analyzing files and URLs for malware.
+* [`Sophos Intelix`](https://intelix.sophos.com/): Threat intelligence platform for analyzing files and URLs.
 
 ### Other Security Functions
 
