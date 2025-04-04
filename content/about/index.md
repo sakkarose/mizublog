@@ -20,7 +20,7 @@ When I'm not busy with my core responsibilities, you'll find me exploring the wo
 
 [Experience Summary - Last updated: November 2024](</attachments/Summary CV - Nov24.pdf>)
 
-[Security Engineer - Last updated: March 2025](</attachments/Security CV - Mar25.pdf>)
+[Security Engineer - Last updated: April 2025](</attachments/Security CV - Apr04.pdf>)
 
 ---
 
