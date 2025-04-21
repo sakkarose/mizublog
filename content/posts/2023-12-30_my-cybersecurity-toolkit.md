@@ -25,157 +25,156 @@ This will be updated over time as I find new resources and tools.
 
 ## List
 
-### Red Team (Offensive)
+###   Red Team (Offensive)
 
-#### **Web Application Security** 
-Specifically focusing on vulnerabilities in web applications.
-* [`gobuster`](https://github.com/OJ/gobuster): Directory and file brute-forcing tool.
+####   Reconnaissance
 
-#### **Network Security Testing** 
-Evaluating the security of network infrastructure.
-* [`Nmap`](https://nmap.org/): Powerful and versatile network scanner.
-
-#### **Reconnaissance/Information Gathering**
 Gathering information about the target system or network.
-* [`theHarvester`](https://github.com/laramies/theHarvester): Email and username gathering tool.
-* [`hunter.io`](https://hunter.io/): Email address finding service.
-* [`Enum4Linux`](https://github.com/CiscoCX/enum4linux): Tool for enumerating information from Windows and Samba systems.
-* [`CF-Hero`](https://github.com/musana/CF-Hero): Tool to discover the real IP addresses of web applications protected by Cloudflare.
 
-#### **Exploit**
-Creating and customizing payloads for penetration testing and exploit development.
-* [`msfvenom`](https://www.metasploit.com/): Command-line payload generator for the Metasploit Framework.
-* [`PowerShell for Hackers`](https://github.com/I-Am-Jakoby/PowerShell-for-Hackers): Providing PowerShell payloads for various offensive purposes.
+* [`theHarvester`](https://github.com/laramies/theHarvester): Email/username gathering.
+* [`hunter.io`](https://hunter.io/): Email finding service.
+* [`Enum4Linux`](https://github.com/CiscoCX/enum4linux): Samba/Windows enumeration.
+* [`CF-Hero`](https://github.com/musana/CF-Hero): Cloudflare IP discovery.
+* [`URLCrazy`](https://github.com/urbanadventurer/urlcrazy): Typosquatting detection.
 
-#### **Password Cracking**
-Attempting to recover passwords by trying various combinations of characters.
-* [`Hydra`](https://github.com/vanhauser-thc/thc-hydra): Password cracking tool supporting various services.
+####   Vulnerability Discovery
 
-#### **Cloud Security Testing**
-Simulating attacks and validating security controls in cloud environments.
-* [`Halberd`](https://github.com/vectra-ai-research/Halberd): Advanced security testing platform for validating cloud security controls through attack emulation.
+Identifying weaknesses in systems, networks, and applications.
 
-### Blue Team (Defensive)
+* [`gobuster`](https://github.com/OJ/gobuster): Web directory brute-forcer.
+* [`Nmap`](https://nmap.org/): Network scanner.
 
-#### **Security Monitoring and Threat Detection** 
-Continuously monitoring systems and networks for suspicious activity.
-* [`Wazuh`](https://wazuh.com/): Open-source SIEM and EDR system.
-* [`Sysmon`](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon): Windows system service that logs detailed system events.
+####   Social Engineering
 
-#### **Incident Response** 
-Responding to security incidents to contain them, mitigate damage, and restore systems.
-* [`Velociraptor`](https://github.com/Velocidex/velociraptor): Advanced endpoint monitoring, digital forensics, and incident response tool.
+Manipulating individuals to gain access.
 
-#### **Vulnerability Management** 
+* [`cuddlephish`](https://github.com/fkasler/cuddlephish): BitM for MFA bypass.
+
+####   Exploitation
+
+Developing and using exploits and payloads.
+
+* [`msfvenom`](https://www.metasploit.com/): Metasploit payload generator.
+* [`PowerShell for Hackers`](https://github.com/I-Am-Jakoby/PowerShell-for-Hackers): PowerShell payloads.
+* [`Hydra`](https://github.com/vanhauser-thc/thc-hydra): Password cracker.
+
+####   Network Stress Testing
+
+Simulating attacks to assess network resilience and availability.
+
+* [`MHDDoS`](https://github.com/MatrixTM/MHDDoS): DDoS attack tool.
+
+##   Blue Team (Defensive)
+
+####   Vulnerability Management
+
 Identifying and remediating vulnerabilities.
+
 * [`Nessus (Tenable)`](https://www.tenable.com/products/nessus): Vulnerability scanner.
+* [`cvemap`](https://github.com/projectdiscovery/cvemap): CVE database CLI.
+* [`Vulnhuntr`](https://github.com/protectai/vulnhuntr): LLM-powered vulnerability finder.
+* [`APKDeepLens`](https://github.com/21hsmw/APKDeepLens): Android APK vulnerability scanner.
+* [`OpenCVE`](https://github.com/opencve/opencve): Platform for managing and monitoring CVE data.
 
-#### **Security Hardening** 
-Implementing security controls to reduce the attack surface.
+####   Threat Intelligence
 
-#### **Threat Intelligence** 
-Gathering and analyzing information about potential threats.
-* [`Sophos Intelix`](https://intelix.sophos.com/): Threat intelligence platform for analyzing files and URLs.
-* [`Ransomware-Tool-Matrix`](https://github.com/BushidoUK/Ransomware-Tool-Matrix):  A curated list of tools used by different ransomware and extortionist groups.
-* [`maltrail`](https://github.com/stamparm/maltrail): A malicious traffic detection system that uses public and custom blacklists to identify threats.
+Gathering and analyzing threat information.
 
-#### **Endpoint Security** 
+* [`Sophos Intelix`](https://intelix.sophos.com/): Threat analysis platform.
+* [`Ransomware-Tool-Matrix`](https://github.com/BushidoUK/Ransomware-Tool-Matrix): Ransomware tool TTPs.
+* [`maltrail`](https://github.com/stamparm/maltrail): Malicious traffic detection.
+
+####   Endpoint Security
+
 Protecting endpoint devices.
-* [`ClamAV`](https://www.clamav.net/): Open-source antivirus engine.
 
-#### **Network Security** 
-Protecting network infrastructure.
-* [`maltrail`](https://github.com/stamparm/maltrail): A malicious traffic detection system that uses public and custom blacklists to identify threats.
+* [`Sysmon`](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon): Windows event logger.
+* [`osquery`](https://osquery.io/): System query tool.
 
-#### **Intrusion Detection and Prevention**
-Monitoring systems and networks for malicious activity and taking action to block or mitigate threats.
-* [`CrowdSec`](https://crowdsec.net/):  Open-source collaborative intrusion detection and prevention system.
+####   Network Security
 
-#### **Web Application Security**
-Protecting web applications from various attacks and vulnerabilities.
-* [`BunkerWeb`](https://github.com/bunkerity/bunkerweb): Open-source self-hosted & cloud web application firewall.
-* [`SafeLine`](https://github.com/chaitin/SafeLine):  Open-source self-hosted web application firewall.
+Protecting network infrastructure, monitoring for threats, and generating alerts.
 
-#### **Email Security**
-Tools and resources related to securing email communication and preventing email-based attacks.
-* [`DMARC-SPF-Checker`](https://github.com/fdzdev/DMARC-SPF-Checker):  A tool to check the DMARC and SPF records of a domain.
-* [`MX Toolbox`](https://mxtoolbox.com/): Website providing diagnostic tools for email servers.
+* [`maltrail`](https://github.com/stamparm/maltrail): Malicious traffic detection.
+* [`CrowdSec`](https://crowdsec.net/): Intrusion detection/prevention.
+* [`Wazuh`](https://wazuh.com/): SIEM/EDR.
+* [`NetAlertX`](https://github.com/jokob-sk/NetAlertX): Network/presence scanner & alerting.
 
-#### **Endpoint Visibility**
-Collecting and analyzing system data to detect suspicious activity, ensure compliance, and improve security posture. This includes tools for querying system state, logging events, and auditing configurations.
-* [`osquery`](https://osquery.io/): Tool for querying system information using SQL.
+####   Incident Response
 
-#### **Privileged Access Management (PAM)**
-Managing and controlling access to privileged accounts and sensitive systems.
-* [`JumpServer`](https://github.com/jumpserver/jumpserver): Open-source bastion host/PAM system.
+Responding to security incidents.
 
-#### **Cloud Security Posture Management (CSPM)**
-Assessing and improving the security posture of cloud environments.
-* [`Push Security`](https://pushsecurity.com): Cloud security posture management tool.
+* [`Velociraptor`](https://github.com/Velocidex/velociraptor): Endpoint forensics/IR.
+* [`Chainsaw`](https://github.com/WithSecureLabs/chainsaw): Memory forensics.
+* [`FTK Imager`](https://accessdata.com/products-services/forensic-toolkit-ftk-imager): Disk imaging.
+* [`gkape`](https://ericzimmerman.github.io/KapeDocs/#!Pages\5.-gkape.md): Artifact parsing.
+* [`WinPmem`](https://github.com/Velocidex/WinPmem): Memory acquisition.
+* [`Volatility 3`](https://github.com/volatilityfoundation/volatility3): Memory analysis.
+* [`LiME`](https://github.com/504ensicsLabs/LiME): Memory acquisition.
 
-#### **Malware Analysis**
-Analyzing malware samples to understand their functionality, identify their characteristics, and develop detection methods.
-* [`YARA`](https://virustotal.github.io/yara/):  Tool for identifying and classifying malware based on rules.
-* [`VirusTotal`](https://www.virustotal.com/): Website for analyzing files and URLs for malware.
-* [`Sophos Intelix`](https://intelix.sophos.com/): Threat intelligence platform for analyzing files and URLs.
+####   Privileged Access Management (PAM)
 
-### Other Security Functions
+Managing privileged access.
 
-#### **GRC (Governance, Risk, and Compliance)** 
-Managing security risk and ensuring compliance.
-* [`Eramba`](https://github.com/eramba): Open-source GRC platform.   
+* [`JumpServer`](https://github.com/jumpserver/jumpserver): Bastion host/PAM.
 
-#### **Digital Forensics and Incident Response (DFIR)** 
-Investigating security incidents and gathering evidence.
-* [`Chainsaw`](https://github.com/WithSecureLabs/chainsaw):  Memory forensics tool for incident response and malware analysis.
-* [`FTK Imager`](https://accessdata.com/products-services/forensic-toolkit-ftk-imager): Tool for creating forensic images of disks and other media.
-* [`gkape`](https://ericzimmerman.github.io/KapeDocs/#!Pages\5.-gkape.md):  Open-source incident response and forensics tool for memory and disk analysis.
-* [`WinPmem`](https://github.com/Velocidex/WinPmem): Library for accessing physical memory in Windows, used for memory analysis and forensics.
-* [`Volatility 3`](https://github.com/volatilityfoundation/volatility3):  Open-source memory forensics framework for extracting and analyzing information from volatile memory (RAM).
-* [`LiME`](https://github.com/504ensicsLabs/LiME):  Loadable Kernel Module (LKM) that captures the contents of volatile memory (RAM) for later analysis.
+####   Cloud Security Posture Management (CSPM)
 
-#### **OSINT (Open Source Intelligence)**
-Gathering and analyzing publicly available information to gain insights about targets, threats, or vulnerabilities.
-* [`OSINT Framework`](https://osintframework.com/): A comprehensive collection of OSINT tools and techniques.
-* [`Have I Been Pwned`](https://haveibeenpwned.com/): A website that allows users to check if their personal data has been compromised in data breaches.
-* [`onion-lookup`](https://github.com/ail-project/onion-lookup): Software for checking the existence of Tor hidden services and retrieving their metadata. 
-* [`DomainTools`](https://www.domaintools.com/): Website providing information about domain names and IP addresses.
-* [`URLScan.io`](https://urlscan.io/): Website for scanning and analyzing URLs.
+Assessing cloud security.
 
-#### **Data Analysis & Manipulation Tools**
-Versatile tools for manipulating and analyzing data in various security contexts.
-* [`CyberChef`](https://gchq.github.io/CyberChef/): Web-based application for data manipulation and analysis.
+* [`Push Security`](https://pushsecurity.com): Cloud security posture.
 
-### Windows System Utilities
+####   Malware Analysis
 
-* `sc.exe` - Service Control utility for managing Windows services
-  * **Red Team Uses:** Creating or modifying services for persistence, privilege escalation, or lateral movement. Disabling services to disrupt defenses.
-  * **Blue Team Uses:** Auditing service configurations, hardening service permissions, troubleshooting service-related issues, stopping malicious services during incident response.
+Analyzing malware.
 
-* `reg` - Registry Editor for viewing and modifying the Windows Registry
-  * **Red Team Uses:** Modifying registry keys for persistence, information gathering, bypassing security controls, or executing payloads.
-  * **Blue Team Uses:** Auditing registry settings for security vulnerabilities, implementing security hardening configurations, investigating malware activity, analyzing system configurations.
+* [`YARA`](https://virustotal.github.io/yara/): Malware rule engine.
+* [`VirusTotal`](https://www.virustotal.com/): Malware analysis platform.
+* [`Sophos Intelix`](https://intelix.sophos.com/): Threat analysis platform.
 
-* `ping` - Basic network connectivity testing
-  * **Red Team Uses:** Reconnaissance (checking if hosts are up), network mapping.
-  * **Blue Team Uses:** Troubleshooting network connectivity issues, verifying network configurations.
+##   Other Security Functions
 
-* `traceroute` - Traces the route packets take to reach a destination
-  * **Red Team Uses:** Network mapping, identifying network infrastructure.
-  * **Blue Team Uses:** Troubleshooting network latency issues, analyzing network paths.
+####   OSINT (Open Source Intelligence)
 
-* `dig` - Domain Information Groper for DNS lookups
-  * **Red Team Uses:** Reconnaissance (gathering information about a target's DNS records, identifying subdomains).
-  * **Blue Team Uses:** Troubleshooting DNS resolution issues, verifying DNS configurations.
+Gathering public information.
 
-### Sysinternals
+* [`OSINT Framework`](https://osintframework.com/): OSINT resources.
+* [`Have I Been Pwned`](https://haveibeenpwned.com/): Breach data lookup.
+* [`onion-lookup`](https://github.com/ail-project/onion-lookup): Tor hidden service lookup.
+* [`DomainTools`](https://www.domaintools.com/): Domain information.
+* [`URLScan.io`](https://urlscan.io/): URL analysis.
+* [`CyberChef`](https://gchq.github.io/CyberChef/): Data manipulation.
 
-A suite of powerful tools for managing, troubleshooting, and monitoring Windows systems.
+##   Windows System Utilities
 
-* [`TCPView`](https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview) - Displays detailed listings of TCP and UDP endpoints
-  * **Red Team Uses:** Identifying open ports and services, understanding network connections established by applications, finding potential attack vectors.
-  * **Blue Team Uses:** Troubleshooting network connectivity issues, identifying malicious network connections, monitoring network activity, investigating malware communication.
+* `sc.exe` - Service Control utility
+    * **Red Team Uses:** Service persistence/privesc.
+    * **Blue Team Uses:** Service auditing/hardening.
 
-* [`Process Explorer`](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer) - Advanced process monitoring tool
-  * **Red Team Uses:** Analyzing running processes, identifying potential targets for attack, understanding process relationships, finding vulnerabilities in running applications.
-  * **Blue Team Uses:** Troubleshooting performance issues, identifying malicious processes, investigating malware activity, analyzing system behavior.
+* `reg` - Registry Editor
+    * **Red Team Uses:** Registry persistence/info gathering.
+    * **Blue Team Uses:** Registry auditing/hardening.
+
+* `ping` - Network connectivity test
+    * **Red Team Uses:** Host discovery.
+    * **Blue Team Uses:** Network troubleshooting.
+
+* `traceroute` - Network path tracer
+    * **Red Team Uses:** Network mapping.
+    * **Blue Team Uses:** Network troubleshooting.
+
+* `dig` - DNS lookup tool
+    * **Red Team Uses:** DNS reconnaissance.
+    * **Blue Team Uses:** DNS troubleshooting.
+
+##   Sysinternals
+
+Windows system tools.
+
+* [`TCPView`](https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview) - TCP/UDP endpoint viewer
+    * **Red Team Uses:** Port/service identification.
+    * **Blue Team Uses:** Network connection monitoring.
+
+* [`Process Explorer`](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer) - Process information viewer
+    * **Red Team Uses:** Process analysis.
+    * **Blue Team Uses:** Malware detection.
