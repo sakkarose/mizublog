@@ -3,7 +3,7 @@ title: "My cybersecurity toolkit"
 date: 2023-12-30T19:45:00+07:00
 lastmod: 2025-04-02T19:45:00+07:00
 showLastmod: true
-draft: false
+draft: true
 categories:
   - note
 tags:
@@ -25,30 +25,12 @@ This will be updated over time as I find new resources and tools.
 
 ## List
 
-###   Red Team (Offensive)
+https://ssdeep-project.github.io/ssdeep/index.html fuzzy hashing
+https://tdm.socprime.com/ platform for  sharing detect rules
+https://bazaar.abuse.ch/ https://malshare.com/ samples, malicious feeds, yara results resource
+https://www.snort.org/ 
+https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html
 
-####   Reconnaissance
-
-Gathering information about the target system or network.
-
-* [`theHarvester`](https://github.com/laramies/theHarvester): Email/username gathering.
-* [`hunter.io`](https://hunter.io/): Email finding service.
-* [`Enum4Linux`](https://github.com/CiscoCX/enum4linux): Samba/Windows enumeration.
-* [`CF-Hero`](https://github.com/musana/CF-Hero): Cloudflare IP discovery.
-* [`URLCrazy`](https://github.com/urbanadventurer/urlcrazy): Typosquatting detection.
-
-####   Vulnerability Discovery
-
-Identifying weaknesses in systems, networks, and applications.
-
-* [`gobuster`](https://github.com/OJ/gobuster): Web directory brute-forcer.
-* [`Nmap`](https://nmap.org/): Network scanner.
-
-####   Social Engineering
-
-Manipulating individuals to gain access.
-
-* [`cuddlephish`](https://github.com/fkasler/cuddlephish): BitM for MFA bypass.
 
 ####   Exploitation
 
@@ -118,11 +100,6 @@ Managing privileged access.
 
 * [`JumpServer`](https://github.com/jumpserver/jumpserver): Bastion host/PAM.
 
-####   Cloud Security Posture Management (CSPM)
-
-Assessing cloud security.
-
-* [`Push Security`](https://pushsecurity.com): Cloud security posture.
 
 ####   Malware Analysis
 
@@ -131,6 +108,8 @@ Analyzing malware.
 * [`YARA`](https://virustotal.github.io/yara/): Malware rule engine.
 * [`VirusTotal`](https://www.virustotal.com/): Malware analysis platform.
 * [`Sophos Intelix`](https://intelix.sophos.com/): Threat analysis platform.
+https://metadefender.com/ Threat analysis platform.
+https://thedfirreport.com/ Malware analysis report
 
 ##   Other Security Functions
 
