@@ -25,11 +25,7 @@ This will be updated over time as I find new resources and tools.
 
 ## List
 
-https://ssdeep-project.github.io/ssdeep/index.html fuzzy hashing
 https://tdm.socprime.com/ platform for  sharing detect rules
-https://bazaar.abuse.ch/ https://malshare.com/ samples, malicious feeds, yara results resource
-https://www.snort.org/ 
-https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html
 
 
 ####   Exploitation
