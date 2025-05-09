@@ -35,21 +35,40 @@ This will be updated over time as I find new resources and tools.
 * [`gobuster`](https://github.com/OJ/gobuster): Brute-force tool to discover URIs, DNS subdomains, Virtual Hosts, cloud buckets, and TFTP servers.
 * [`Nmap`](https://nmap.org/): Initial network scanning of external targets to identify live hosts and broadly check for open ports/services.
 * [`Bjorn`](https://github.com/infinition/Bjorn): Tamagotchi-like tool for network scanning, vulnerability assessment.
+* [`Sherlock`](https://github.com/sherlock-project/sherlock): OSINT tool to hunt down social media and other online accounts by username across numerous platforms.
 
 #### Initial Access (TA0001)
 <ins>Description:</ins> Trying to get into victim's network.
 * [`cuddlephish`](https://github.com/fkasler/cuddlephish): Browser-in-the-Middle (BitM) framework for phishing attacks to bypass MFA and capture sessions.
+* [`Modlishka`](https://github.com/drk1wi/Modlishka): HTTP reverse proxy for advanced phishing attacks; facilitates 2FA bypass by capturing credentials and session cookies.
+* [`Evilginx`](https://github.com/kgretzky/evilginx2): Man-in-the-middle attack framework for phishing credentials and session cookies to bypass 2FA.
+* [`Muraena`](https://github.com/muraenateam/muraena): Reverse proxy for automating phishing and post-phishing activities, facilitating credential and session capture.
+* [`EvilnoVNC`](https://github.com/JoelGMSec/EvilnoVNC): Phishing platform using a real browser over noVNC to bypass 2FA, capture credentials, sessions, and access browser profile data.
 
 #### Credential Access (TA0006)
 <ins>Description:</ins> Trying to steal account names and passwords.
 * [`Ciphey`](https://github.com/bee-san/Ciphey): Automated decryption/decoding tool using AI for cipher detection; supports various encodings, classical ciphers, and some modern cryptography.
-* [`Modlishka`](https://github.com/drk1wi/Modlishka): HTTP reverse proxy for advanced phishing attacks; facilitates 2FA bypass by capturing credentials and session cookies.
 * [`Bjorn`](https://github.com/infinition/Bjorn): Tamagotchi-like tool for brute-force attacks (FTP, SSH, SMB, etc.), and data exfiltration.
+* [`cuddlephish`](https://github.com/fkasler/cuddlephish): Browser-in-the-Middle (BitM) framework for phishing attacks to bypass MFA and capture sessions.
+* [`Modlishka`](https://github.com/drk1wi/Modlishka): HTTP reverse proxy for advanced phishing attacks; facilitates 2FA bypass by capturing credentials and session cookies.
+* [`Evilginx`](https://github.com/kgretzky/evilginx2): Man-in-the-middle attack framework for phishing credentials and session cookies to bypass 2FA.
+* [`Muraena`](https://github.com/muraenateam/muraena): Reverse proxy for automating phishing and post-phishing activities, facilitating credential and session capture.
+* [`EvilnoVNC`](https://github.com/JoelGMSec/EvilnoVNC): Phishing platform using a real browser over noVNC to bypass 2FA, capture credentials, sessions, and access browser profile data.
+* [`hashcat`](https://github.com/hashcat/hashcat): Advanced password recovery and cracking tool supporting numerous hash types and attack modes, capable of GPU acceleration.
+* [`hcxtools`](https://github.com/ZerBea/hcxtools): Utilities to convert WiFi WPA/WPA2 packet captures (handshakes, PMKIDs) into hash formats for cracking with Hashcat or John the Ripper.
 
 #### Discovery (TA0007)
 <ins>Description:</ins> Trying to figure out victim's environment.
 * [`Enum4Linux`](https://github.com/CiscoCXSecurity/enum4linux): Used for enumerating data from Windows and Samba hosts.
 * [`Nmap`](https://nmap.org/): In-depth network mapping (internal/external) for detailed port/service/version/OS detection, vulnerability identification (NSE), and understanding network topology.
+
+#### Collection (TA0009)
+<ins>Description:</ins> Trying to gather data of interest to their goal.
+* [`EvilnoVNC`](https://github.com/JoelGMSec/EvilnoVNC): Phishing platform using a real browser over noVNC to bypass 2FA, capture credentials, sessions, and access browser profile data.
+
+#### Command and Control (TA0011)
+<ins>Description:</ins> Trying to communicate with compromised systems to control them.
+* [`PingRAT`](https://github.com/umutcamliyurt/PingRAT): Remote Access Trojan (RAT) that uses ICMP packets for covert Command and Control (C2) traffic.
 
 #### Impact (TA0040)
 <ins>Description:</ins> Trying to manipulate, interrupt, or destroy your systems and data.
@@ -105,6 +124,7 @@ This will be updated over time as I find new resources and tools.
 * [`Ciphey`](https://github.com/bee-san/Ciphey): Automated decryption/decoding tool using AI for cipher detection; supports various encodings, classical ciphers, and some modern cryptography.
 * [`Cortex`](https://github.com/TheHive-Project/Cortex): Observable analysis and active response engine with numerous analyzers and responders, often integrated with TheHive SIRP.
 * [`MalwareSourceCode (vxunderground)`](https://github.com/vxunderground/MalwareSourceCode): A collection of malware source code for in-depth analysis and research during incident response or malware studies.
+* [`SOC Prime (Threat Detection Marketplace)`](https://tdm.socprime.com): Platform for collaborative cyber defense providing detection content (e.g., Sigma rules) for SIEMs, EDRs, and XDRs, supporting Detection as Code.
 
 ### Others (Management, Purple Team)
 #### Governance, Risk, and Compliance (GRC)
