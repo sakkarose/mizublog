@@ -34,12 +34,12 @@ This will be updated over time as I find new resources and tools.
 * [`URLCrazy`](https://github.com/urbanadventurer/urlcrazy): OSINT tool to generate and test domain variations for typosquatting, phishing, or brand protection research.
 * [`gobuster`](https://github.com/OJ/gobuster): Brute-force tool to discover URIs, DNS subdomains, Virtual Hosts, cloud buckets, and TFTP servers.
 * [`Nmap`](https://nmap.org/): Initial network scanning of external targets to identify live hosts and broadly check for open ports/services.
-* [`Bjorn`](https://github.com/infinition/Bjorn): Tamagotchi-like tool for network scanning, vulnerability assessment.
 * [`Sherlock`](https://github.com/sherlock-project/sherlock): OSINT tool to hunt down social media and other online accounts by username across numerous platforms.
 * [`hcxdumptool`](https://github.com/ZerBea/hcxdumptool): Tool for capturing WiFi WPA/WPA2 handshakes and PMKIDs from wireless networks for subsequent cracking attempts.
 * [`Osintgram`](https://github.com/amir-hosseinpour/Osintgram-fixed): OSINT tool for collecting, analyzing, and running reconnaissance on Instagram profiles.
 * [`PhoneInfoga`](https://github.com/sundowndev/phoneinfoga): Advanced OSINT tool for scanning international phone numbers to gather associated information (carrier, line type, owner clues, social media presence, etc.).
 * [`Pwnagotchi`](https://github.com/jayofelony/pwnagotchi): Raspberry Pi-based tool (using bettercap) for automatically capturing WPA/WPA2 handshakes and PMKIDs for offline cracking.
+* [`Bjorn`](https://github.com/infinition/Bjorn): Pwnagotchi-like tool for network scanning, vulnerability assessment.
 * [`Evil-M5Project`](https://github.com/7h30th3r0n3/Evil-M5Project): ESP32/M5Core2-based offensive toolkit for Wi-Fi attacks (Rogue AP, Evil Twin, deauth, Karma), network attacks, BadUSB, Bluetooth attacks, and C2, aimed at gaining access and control.
 * [`Creepy`](https://github.com/ilektrojohn/creepy): OSINT tool that gathers and maps geolocation information from online sources (e.g., social media, photo metadata).
 * [`GeoSpy`](https://github.com/atiilla/geospy): Python tool using an AI service (Graylark) to identify the geographical location where photos were taken.
@@ -59,7 +59,7 @@ This will be updated over time as I find new resources and tools.
 #### Credential Access (TA0006)
 <ins>Description:</ins> Trying to steal account names and passwords.
 * [`Ciphey`](https://github.com/bee-san/Ciphey): Automated decryption/decoding tool using AI for cipher detection; supports various encodings, classical ciphers, and some modern cryptography.
-* [`Bjorn`](https://github.com/infinition/Bjorn): Tamagotchi-like tool for brute-force attacks (FTP, SSH, SMB, etc.), and data exfiltration.
+* [`Bjorn`](https://github.com/infinition/Bjorn): Pwnagotchi-like tool for brute-force attacks (FTP, SSH, SMB, etc.), and data exfiltration.
 * [`cuddlephish`](https://github.com/fkasler/cuddlephish): Browser-in-the-Middle (BitM) framework for phishing attacks to bypass MFA and capture sessions.
 * [`Modlishka`](https://github.com/drk1wi/Modlishka): HTTP reverse proxy for advanced phishing attacks; facilitates 2FA bypass by capturing credentials and session cookies.
 * [`Evilginx`](https://github.com/kgretzky/evilginx2): Man-in-the-middle attack framework for phishing credentials and session cookies to bypass 2FA.
