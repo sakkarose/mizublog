@@ -101,6 +101,7 @@ This will be updated over time as I find new resources and tools.
 
 #### AppSec & DevSecOps
 <ins>Description:</ins> Building security into applications, inspecting web traffic, and actively defending against exploits.
+
 <ins>Tags:</ins> SSL/TLS Inspection (M1020), Exploit Protection (M1050)
 
 * [`BunkerWeb`](https://github.com/bunkerity/bunkerweb): Nginx-based open-source Web Application Firewall (WAF).
@@ -165,8 +166,10 @@ This will be updated over time as I find new resources and tools.
 
 ### Others (Management, Purple Team)
 #### Governance, Risk, and Compliance (GRC)
-<ins>Description:</ins> Focuses on frameworks, processes, and tools for establishing security policies, managing cyber risk, and ensuring compliance with external and internal requirements.  
+<ins>Description:</ins> Focuses on frameworks, processes, and tools for establishing security policies, managing cyber risk, and ensuring compliance with external and internal requirements.
+
 <ins>Tags:</ins> User Training (M1017), Data Backup (M1053)
+
 * [`Eramba`](https://github.com/eramba): Stable & feature-rich GRC platform.
 * [`Comp AI`](https://github.com/trycompai/comp): New & under heavy-development GRC platform.
 * [`Wizer`](https://www.wizer-training.com/): Security awareness training & phishing simulation.
