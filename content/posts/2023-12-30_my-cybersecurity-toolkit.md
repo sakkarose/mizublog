@@ -91,7 +91,9 @@ This will be updated over time as I find new resources and tools.
 ### Blue Team
 #### Network Security
 <ins>Description:</ins> Monitoring network traffic, controlling access, and actively preventing intrusions.
+
 <ins>Tags:</ins> Network Intrusion Prevention (M1031), Filter Network Traffic (M1037), Network Segmentation (M1030)
+
 * [`OPNsense`](https://opnsense.org/download/): FreeBSD-based, open-source, user-friendly firewall and routing platform.
 * [`Snort`](https://www.snort.org/): Open-source Network Intrusion Prevention System (NIPS) and Intrusion Detection System (NIDS) that uses rule-based analysis of network traffic.
 * [`testmynids.org`](https://github.com/3CORESec/testmynids.org): Website and script framework for testing Network Intrusion Detection System (NIDS) detection capabilities against known malicious patterns.
@@ -100,40 +102,51 @@ This will be updated over time as I find new resources and tools.
 #### AppSec & DevSecOps
 <ins>Description:</ins> Building security into applications, inspecting web traffic, and actively defending against exploits.
 <ins>Tags:</ins> SSL/TLS Inspection (M1020), Exploit Protection (M1050)
+
 * [`BunkerWeb`](https://github.com/bunkerity/bunkerweb): Nginx-based open-source Web Application Firewall (WAF).
 * [`SafeLine`](https://github.com/chaitin/SafeLine): Open-source Web Application Firewall (WAF).
 * [`grype`](https://github.com/anchore/grype): Vulnerability scanner for container images and filesystems, identifying known vulnerabilities in OS and language-specific packages.
 
 #### Endpoint Security
 <ins>Description:</ins> Monitoring endpoint activities, preventing malware infections, and actively blocking malicious code execution.
+
 <ins>Tags:</ins> Behavior Prevention on Endpoint (M1040), Antivirus/Antimalware (M1049), Execution Prevention (M1038)
+
 * [`ClamAV`](https://github.com/Cisco-Talos/clamav): Open source antivirus engine
 * [`kernel-hardening-checker`](https://github.com/a13xp0p0v/kernel-hardening-checker): Tool for checking Linux kernel security hardening options (compile-time, boot-time, runtime) against best practices.
 
 #### Data Security
 <ins>Description:</ins> Identifying sensitive data, preventing its unauthorized loss, and actively ensuring its backup and recovery.
+
 <ins>Tags:</ins> Data Loss Prevention (M1057), Data Backup (M1053)
 
 #### Cloud Security
 <ins>Description:</ins> Managing secure cloud configurations, protecting cloud workloads and data, and actively controlling access to cloud resources.
+
 <ins>Tags:</ins>
 
 #### Email Security
 <ins>Description:</ins> Authenticating email senders, filtering out malicious content, and actively defending against email-based attacks.
+
 <ins>Tags:</ins>
+
 * [`Sublime Platform`](https://github.com/sublime-security/sublime-platform): Open platform for detecting and preventing email attacks.
 * [`DMARC-SPF-Checker`](https://github.com/fdzdev/DMARC-SPF-Checker): Analyzing DMARC and SPF records for a list of domains.
 * [`MX Toolbox`](https://mxtoolbox.com/): Listing MX records for a domain.
 
 #### Identity Security
 <ins>Description:</ins> Verifying user identities, detecting credential abuse and account takeover attempts, and actively responding to identity-based threats.
+
 <ins>Tags:</ins>
+
 * [`Push Security`](https://pushsecurity.com): Browser-based ITDR platform protecting against phishing, AitM, credential abuse, and account takeover.
 * [`Teleport`](https://github.com/gravitational/teleport): Identity-aware access proxy providing secure connectivity, authentication (certificates, SSO, MFA), authorization (RBAC), and audit for infrastructure (SSH, K8s, DBs, RDP, web apps).
 
 #### Incident Response & Automation
 <ins>Description:</ins> Analyzing security incidents, automating response workflows, and actively managing the containment, eradication, and recovery process.
+
 <ins>Tags:</ins>
+
 * [`Shuffle`](https://github.com/Shuffle/Shuffle): Open-source Security Orchestration, Automation, and Response (SOAR) platform.
 * [`ssdeep`](https://ssdeep-project.github.io/ssdeep/index.html): Computing and comparing fuzzy hashes (CTPH) to find similar malware.
 * [`MalShare`](https://malshare.com/): Community malware repository with an API for sample submission, download, and querying (SHA256, YARA hits, etc.).
