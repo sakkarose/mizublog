@@ -21,7 +21,7 @@
       this.y = Math.random() * (height - EDGE_PADDING * 2) + EDGE_PADDING;
       this.vx = (Math.random() - 0.5) * 0.8;
       this.vy = (Math.random() - 0.5) * 0.8;
-      this.r = Math.random() * 600 + 450; // Increased from (150 + 100) to (200 + 150)
+      this.r = Math.random() * 300 + 150; // Increased from (150 + 100) to (200 + 150)
     }
     
     update(scrollY) {
@@ -36,7 +36,7 @@
     }
   }
   
-  for (let i = 0; i < 15; i++) { // Increased from 4 to 6 balls
+  for (let i = 0; i < 8; i++) { // Increased from 4 to 6 balls
     metaballs.push(new Metaball());
   }
   
