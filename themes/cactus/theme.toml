@@ -1,7 +1,7 @@
 name = "Cactus"
 license = "MIT"
 licenselink = "https://github.com/monkeyWzr/hugo-theme-cactus/blob/master/LICENSE"
-description = "A clean, responsive hugo theme for personal blog. Forked from hexo theme cactus created by @probberechts."
+description = "A clean, responsive blog theme for Hugo"
 homepage = "https://github.com/monkeyWzr/hugo-theme-cactus"
 demosite = "https://www.takuzen.me/hugo-theme-cactus/"
 tags = ["blog", "responsive", "clean"]
@@ -15,6 +15,25 @@ min_version = "0.55"
 
 # If porting an existing theme
 [original]
-    author = "Pieter Robberechts"
-    homepage = "https://github.com/probberechts"
+    name = "Cactus for Hexo" 
+    homepage = "https://github.com/probberechts/hexo-theme-cactus"
     repo = "https://github.com/probberechts/hexo-theme-cactus"
+
+[params]
+  mainSection = "posts"
+  rss = false
+  tagsOverview = true
+  showProjectsList = true
+  dateFormat = "2006-01-02"
+  colortheme = "white"
+
+[markup.highlight]
+  codeFences = true
+  guessSyntax = false
+  hl_Lines = ""
+  lineNoStart = 1
+  lineNos = true
+  lineNumbersInTable = false
+  noClasses = true
+  style = "monokai"
+  tabWidth = 4

@@ -1,0 +1,16 @@
+{
+    "data": {
+        "title": {{ .Title | jsonify }},
+        "permalink": "{{ .Permalink }}",
+        "date": "{{ .Date.Format "2006-01-02" }}",
+        "content": {{ .Plain | jsonify }},
+        "summary": {{ .Summary | jsonify }},
+        {{- with .Params.tags -}}
+        "tags": {{ . | jsonify }},
+        {{- end -}}
+        {{- with .Params.categories -}}
+        "categories": {{ . | jsonify }},
+        {{- end -}}
+        "type": "{{ .Type }}"
+    }
+}

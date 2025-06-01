@@ -208,6 +208,7 @@ else
     log_message "Cronjob failed."
 fi
 ```
+
 Then, I simply run `crontab -e` and configure this script with the run schedule time `0 0 * * * /home/backup-scripts/wrapper_script.sh`
 
 ### Synchronize backup to network storage with rclone
@@ -241,4 +242,4 @@ In the next blog post, we'll explore KVM native backup scripting.
 
 * [Rclone - SFTP remote](https://rclone.org/sftp/)
 
-* [Rclone - Sync command](https://rclone.org/commands/rclone_sync/
+* [Rclone - Sync command](https://rclone.org/commands/rclone_sync)

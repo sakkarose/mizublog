@@ -1,6 +1,8 @@
 {{ define "main"}}
-<div id="archive">
-  <ul class="post-list">
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="content" itemprop="articleBody">
+    <div id="archive">
+      <ul class="post-list">
 
   {{ $pages := .Paginator.Pages }}
   {{ if .Site.Params.showAllPostsArchive }}
@@ -30,10 +32,11 @@
         <a class="" href="{{ .Permalink }}">{{ if .Title }} {{ .Title }} {{ else }} Untitled {{ end }}</a>
       </span>
     </li>
-    {{ end }}
-  </ul>
-  {{ if eq .Site.Params.showAllPostsArchive false }}
-    {{ partial "pagination.html" . }}
-  {{ end }}
-</div>
+    {{ end }}      </ul>
+      {{ if eq .Site.Params.showAllPostsArchive false }}
+        {{ partial "pagination.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</article>
 {{ end }}

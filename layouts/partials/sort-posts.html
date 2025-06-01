@@ -1,0 +1,8 @@
+{{ $mainPosts := where .Site.RegularPages "Type" "in" .Site.Params.mainSection }}
+{{ $sortedPosts := $mainPosts }}
+{{ if .Lastmod }}
+  {{ $sortedPosts = sort $mainPosts "Lastmod" "desc" }}
+{{ else }}
+  {{ $sortedPosts = sort $mainPosts "Date" "desc" }}
+{{ end }}
+{{ return $sortedPosts }}

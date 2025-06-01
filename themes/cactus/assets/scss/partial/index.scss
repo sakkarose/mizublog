@@ -38,3 +38,25 @@
     }
   }
 }
+#about {
+  .description-wrapper {
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+    overflow-wrap: break-word;
+
+    p {
+      margin: 0;
+      padding: 0;
+      white-space: pre-line;
+    }
+  }
+
+  .additional-description {
+    display: flex;
+    align-items: baseline;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+}

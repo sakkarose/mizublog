@@ -55,12 +55,12 @@ weight = 4
   favicon = "/images/favicon.ico"
   
   description = """
-  i'm a security engineer and technical consultant, with a strong interest for cybersecurity and compliance.\n
-  i can go by Hoang, or more friendly, mizu and reisen works too.\n
+  I'm a security engineer and technical consultant, with a strong interest for cybersecurity and compliance.\n
+  I can go by Hoang, or more friendly, mizu and reisen works too.
   """
 
   additional_description = """
-  more about me (and my cv) can be found at 
+  More about me (and my cv) can be found at 
   """
 
   rss = true # generate rss feed. default value is false
@@ -80,6 +80,48 @@ weight = 4
   show_updated = true # default
   showReadTime = true # default
 
+  # SEO Options
+  enableOpenGraph = true
+  enableTwitterCards = true
+  images = ["/images/site-feature-image.jpg"]
+  # Default page sharing image
+  defaultSocialImage = "/images/site-feature-image.jpg"
+  
+  # Enhanced meta description
+  metaDescription = "Security engineering, technical consulting, and cybersecurity insights by Hoang (mizu). Exploring compliance, system architecture, and security best practices."
+  
+  # Structured data
+  [params.schema]
+    type = "Person"
+    name = "Hoang"
+    description = "Security Engineer and Technical Consultant"
+    sameAs = ["https://github.com/yourusername"]  # Add your social profiles here
+
 [security]
   [security.funcs]
     getenv = ['^HUGO_', '^CI$']
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[outputs]
+  home = ["HTML", "RSS", "JSON", "SITEMAP"]
+  section = ["HTML", "RSS", "JSON"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+
+[build]
+  writeStats = true
+  
+[build.processing]
+  skip = false
+[build.processing.css]
+  bundle = true
+  minify = true
+[build.processing.js]
+  bundle = true
+  minify = true
+[build.processing.images]
+  compress = true

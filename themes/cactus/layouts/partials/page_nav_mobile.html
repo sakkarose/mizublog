@@ -15,11 +15,6 @@
     </div>
     {{ end }}
 
-    <div id="share-footer" style="display: none">
-      {{ .Scratch.Set "icon_class_name" "fa-lg" }}
-      {{ partial "share.html" . }}
-    </div>
-
     <div id="actions-footer">
       <!-- TODO: rewrite the toggle function. hide the others when one menu is displayed -->
         <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">

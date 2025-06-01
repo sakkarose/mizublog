@@ -23,7 +23,7 @@ html {
 body {
   margin: 0;
   height: 100%;
-  background-color: $color-background;
+  background-color: #7287fd;
   color: $color-text;
   font-display: swap;
   font-weight: 400;
@@ -44,35 +44,88 @@ body {
   backdrop-filter: blur(5px);
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  padding: 2rem;
+  padding: 2rem 3rem;
+  display: block;
+  min-height: calc(100vh - 2rem);
   margin: 1rem auto;
+  width: 95%;
+  max-width: 90rem;  // Approximately 80 characters at default font size
+  min-width: 20rem;  // Minimum width for readability
 
-  // Simplify nested selectors
+  p {
+    @include hyphens(auto);
+  }
+  code {
+    @include hyphens(manual);
+  }
   a {
     color: $color-text;
     text-decoration: none;
+
     @include underline(5px, $color-text);
 
     &:hover {
       background-image: linear-gradient(transparent, transparent 4px, $color-link 4px, $color-link);
     }
+  }
+  
+  a.icon {
+    background: none;
 
-    &.icon {
-      background: none;
-      &:hover { color: $color-link; }
+    &:hover {
+      color: $color-link;
     }
   }
-
-  // Clean up heading styles
-  h1, h2, h3, h4, h5, h6 {
+  h1 a,
+  .h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a {
+    background: none;
+    color: inherit;
+    text-decoration: none;
+  }
+  h1 a:hover,
+  .h1 a:hover,
+  h2 a:hover,
+  h3 a:hover,
+  h4 a:hover,
+  h5 a:hover,
+  h6 a:hover {
+    @include underline(6px, $color-link);
+  }
+  h6 {
     a {
       background: none;
       color: inherit;
       text-decoration: none;
+    }
+  }
+  h6 {
+    a:hover {
+      @include underline(6px, $color-link);
+    }
+  }
 
-      &:hover {
-        @include underline(6px, $color-link);
+  #about {
+    .description-wrapper {
+      word-wrap: break-word;
+      white-space: normal;
+      max-width: 100%;
+      p {
+        margin: 0;
+        padding: 0;
       }
+    }
+    
+    .additional-description {
+      display: flex;
+      align-items: baseline;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.25rem;
     }
   }
 }
@@ -87,20 +140,47 @@ body {
     }
     p {
       flex: 1 0 65%;
+    }  }
+}
+.max-width {
+  width: 100%;
+  display: block;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+
+  .content {
+    display: block;
+    flex-direction: column;
+    min-height: calc(100vh - 2rem);
+    width: fit-content;
+    //max-width: 64rem;
+    margin: 1rem auto;
+
+    > *:first-child {
+      margin-top: auto;
     }
   }
 }
-.max-width {
-  max-width: $page-width;
-}
-@media (max-width: 480px) {  // smaller margins at smaller screen widths
-  .px3 {
-    padding-right: 1rem;
-    padding-left: 1rem;
+
+@media (max-width: 1280px) {
+  .content {
+    padding: 2rem;  // Slightly reduce padding on medium screens
   }
-  .my4 {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 1.5rem;  // Further reduce padding on smaller screens
+    margin: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 1rem;    // Minimum padding on mobile
+    margin: 0.5rem;
+    max-width: calc(100vw - 1rem);  // Account for margins
   }
 }
 

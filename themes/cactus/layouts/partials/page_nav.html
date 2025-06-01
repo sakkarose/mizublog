@@ -1,10 +1,43 @@
+<style>
+.menu-hidden {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+}
+.menu-visible {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.15s ease-in, transform 0.15s ease-in;
+}
+#menu {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  position: fixed;
+  right: 20px;
+  top: 60px;
+  z-index: 1000;
+  min-width: 300px;
+  border-radius: 10px;
+  pointer-events: auto;
+}
+#menu-icon {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1001;
+}
+</style>
+
 <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
+  <span id="menu" class="menu-hidden">
+    <a id="menu-icon-tablet" href="#" style="position: relative; z-index: 1001;"><i class="fas fa-bars fa-lg"></i></a>
+    <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+    <span id="nav" style="padding-right: 30px; display: block;">
+      <ul style="margin-left: 10px;">
         {{ range .Site.Menus.main }} 
         <li><a href="{{ .URL }}">{{ .Name }}</a></li>
         {{ end }}
@@ -32,22 +65,12 @@
             <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
           </a>
         </li>
-        <li>
-          <a class="icon" href="#" aria-label="Share">
-            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
-          </a>
-        </li>
       </ul>
       <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-next" class="info" style="display:none;">Next post</span>
       <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
     <br/>
-    <div id="share" style="display: none">
-      {{ .Scratch.Set "icon_class_name" ""}}
-      {{ partial "share.html" . }}
-    </div>
     {{ if not .Site.Params.tocInline }}
     <div id="toc">
       {{ .TableOfContents }}
@@ -55,3 +78,31 @@
     {{ end }}
   </span>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menu = document.getElementById('menu');
+    const menuIcon = document.getElementById('menu-icon');
+    let timeoutId;
+    
+    menu.classList.add('menu-hidden');
+    
+    const showMenu = () => {
+        clearTimeout(timeoutId);
+        menu.classList.remove('menu-hidden');
+        menu.classList.add('menu-visible');
+    };
+    
+    const hideMenu = () => {
+        timeoutId = setTimeout(() => {
+            menu.classList.remove('menu-visible');
+            menu.classList.add('menu-hidden');
+        }, 300); // Small delay before hiding
+    };
+    
+    menuIcon.addEventListener('mouseenter', showMenu);
+    menu.addEventListener('mouseenter', showMenu);
+    menuIcon.addEventListener('mouseleave', hideMenu);
+    menu.addEventListener('mouseleave', hideMenu);
+});
+</script>
