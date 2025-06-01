@@ -21,7 +21,7 @@
       this.y = Math.random() * (height - EDGE_PADDING * 2) + EDGE_PADDING;
       this.vx = (Math.random() - 0.5) * 0.8;
       this.vy = (Math.random() - 0.5) * 0.8;
-      this.r = Math.random() * 300 + 150; // Increased from (150 + 100) to (200 + 150)
+      this.r = Math.random() * 300 + 150; // Metaballs radius
     }
     
     update(scrollY) {
@@ -36,7 +36,7 @@
     }
   }
   
-  for (let i = 0; i < 8; i++) { // Increased from 4 to 6 balls
+  for (let i = 0; i < 8; i++) { // Amount of metaballs
     metaballs.push(new Metaball());
   }
   
@@ -61,7 +61,7 @@
     ctx.fillRect(0, 0, width, height);
     
     // Pure black metaballs required for contrast filter
-    ctx.fillStyle = '#000000';  // This makes the balls black
+    ctx.fillStyle = '#000000';
     metaballs.forEach(ball => {
       ball.update(scrollVelocity);
       ctx.beginPath();
