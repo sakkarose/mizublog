@@ -8,15 +8,16 @@ on:
 jobs:
   update-badge:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        - name: Create badges directory if it doesn't exist
+    steps:      - uses: actions/checkout@v4
+      
+      - name: Create badges directory if it doesn't exist
         run: mkdir -p static/badges
       
       - name: Download TryHackMe badge
         run: |
           curl -L "https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3664209" -o "static/badges/thm-badge.html"
-            - name: Check for changes
+      
+      - name: Check for changes
         id: verify_diff
         run: |
           git add static/badges/thm-badge.html
