@@ -9,7 +9,8 @@ jobs:
   update-badge:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
       
       - name: Create badges directory if it doesn't exist
         run: mkdir -p static/badges
