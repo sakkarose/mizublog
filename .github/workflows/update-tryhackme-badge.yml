@@ -8,6 +8,8 @@ on:
 jobs:
   update-badge:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write    # This allows the job to push changes
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
