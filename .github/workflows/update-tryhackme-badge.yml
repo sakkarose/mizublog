@@ -10,18 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Create images directory if it doesn't exist
-        run: mkdir -p static/images
+        - name: Create badges directory if it doesn't exist
+        run: mkdir -p static/badges
       
       - name: Download TryHackMe badge
         run: |
-          curl -L "https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3664209" -o "static/images/thm-badge.png"
-          
-      - name: Check for changes
+          curl -L "https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3664209" -o "static/badges/thm-badge.html"
+            - name: Check for changes
         id: verify_diff
         run: |
-          git add static/images/thm-badge.png
+          git add static/badges/thm-badge.html
           git diff --staged --quiet || echo "changed=true" >> $GITHUB_OUTPUT
           
       - name: Commit and push if changed
