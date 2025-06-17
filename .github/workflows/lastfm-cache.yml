@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        - name: Fetch Last.fm data
+      - name: Fetch Last.fm data
         env:
           WORKER_URL: ${{ secrets.LASTFM_WORKER_URL }}
         run: |
