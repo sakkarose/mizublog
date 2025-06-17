@@ -1,4 +1,4 @@
-name: Cache Last.fm Data
+name: Cache Last.fm APIs
 
 on:
   schedule:
