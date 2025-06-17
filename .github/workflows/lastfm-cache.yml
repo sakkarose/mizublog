@@ -13,10 +13,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
-      - name: Fetch Last.fm data
+        - name: Fetch Last.fm data
+        env:
+          WORKER_URL: ${{ secrets.LASTFM_WORKER_URL }}
         run: |
-          response=$(curl -s '${{ secrets.LASTFM_WORKER_URL }}')
+          response=$(curl -s "$WORKER_URL")
           echo "$response" > static/js/lastfm-data.json
           
       - name: Check for changes
