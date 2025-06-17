@@ -1,4 +1,4 @@
-fetch('/js/lastfm-data.json')
+fetch('https://lastfmapi.last-continue103.workers.dev')
   .then(response => {
     if (!response.ok) {
       throw new Error(`Network response was not ok (status: ${response.status})`);
@@ -6,11 +6,8 @@ fetch('/js/lastfm-data.json')
     return response.json();
   })
   .then(data => {
-    console.log("Data received:", data);
-
-    // Check if data and required properties exist
-    if (data?.artist && data?.name && data?.album && data?.artworkUrl && data?.songUrl) { 
-      const { artist, name: songName, album: albumName, artworkUrl, songUrl } = data; 
+    console.log("Data received:", data);    // Check if data and required properties exist    if (data?.artist && data?.name && data?.album && data?.artworkUrl && data?.songUrl) { 
+      const { artist, name: songName, album: albumName, artworkUrl, songUrl } = data;
 
       const trackContainer = document.getElementById('lastfm-recent-track');
       trackContainer.innerHTML = ` 

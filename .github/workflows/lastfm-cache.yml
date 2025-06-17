@@ -1,9 +1,7 @@
 name: Cache Last.fm APIs
 
 on:
-  schedule:
-    - cron: '* * * * *'  # Run every minute
-  workflow_dispatch:      # Allow manual trigger
+  workflow_dispatch:
 
 jobs:
   update-lastfm:
