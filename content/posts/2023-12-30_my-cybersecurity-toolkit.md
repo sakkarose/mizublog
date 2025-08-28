@@ -1,7 +1,7 @@
 ---
 title: "My cybersecurity toolkit"
 date: 2023-12-30T19:45:00+07:00
-lastmod: 2025-05-12T19:45:00+07:00
+lastmod: 2025-07-29T19:45:00+07:00
 showLastmod: true
 draft: false
 categories:
@@ -163,6 +163,7 @@ This will be updated over time as I find new resources and tools.
 * [`RITA (Real Intelligence Threat Analytics)`](https://github.com/activecm/rita): Framework for detecting command and control (C2) communication (beaconing, DNS tunneling, etc.) through network traffic analysis of Zeek logs.
 * [`CyberChef`](https://github.com/gchq/CyberChef): A web app for data encoding, decoding, encryption, hashing, formatting, and analysis.
 * [`Plaso (log2timeline)`](https://github.com/log2timeline/plaso): Python-based forensic engine for extracting and correlating timestamped events from diverse system artifacts to create detailed timelines for incident response and analysis.
+* [`Cowrie`](https://github.com/cowrie/cowrie): SSH and Telnet honeypot designed to log brute force attacks and shell interaction for threat intelligence gathering.
 
 ### Others (Management, Purple Team)
 #### Governance, Risk, and Compliance (GRC)
